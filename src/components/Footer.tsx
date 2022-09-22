@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaInstagram, FaGithub } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="px-4 py-12 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto space-y-6">
           <div id="social" className="flex justify-center gap-6">
-            <Link
+            <a
               href="https://www.instagram.com/plantburgertrailer"
               target="_blank"
               rel="noopener noreferrer"
@@ -16,9 +16,20 @@ const Footer = () => {
                 className="cursor-pointer hover:fill-secondary"
                 size={40}
               />
-            </Link>
+            </a>
 
-            <Link
+            <a
+              href="https://www.facebook.com/plantburgertrailer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook
+                className="cursor-pointer hover:fill-secondary"
+                size={40}
+              />
+            </a>
+
+            <a
               href="https://github.com/hundehausen/plant-burger"
               target="_blank"
               rel="noopener noreferrer"
@@ -27,7 +38,7 @@ const Footer = () => {
                 className="cursor-pointer hover:fill-secondary"
                 size={40}
               />
-            </Link>
+            </a>
           </div>
 
           <nav className="p-6 border-4 border-gray-900 rounded-3xl">
