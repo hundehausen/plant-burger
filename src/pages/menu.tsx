@@ -54,7 +54,7 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
   return (
     <>
       <CustomHead title="Plant-Burger Speisekarte" />
-      <div className="text-center">
+      <div className="text-center p-8">
         {burgers.length > 0 && (
           <div className="category">
             <span className="text-2xl font-bold">Burger</span>
@@ -98,6 +98,15 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
             </div>
           </div>
         )}
+
+        <div id="allergenes" className="text-center">
+          <p className="text-2xl">Allergenkennzeichnung (nach EU-Verordnung)</p>
+          <p>
+            A Glutenhaltiges Getreide/ E Erdnüsse/ F Sojabohnen/ H
+            Schalenfrüchte/ L Sellerie/ M Senf/ N Sesam/ O Schwefeldioxid und
+            Sulfite/ P Lupinen
+          </p>
+        </div>
       </div>
     </>
   );
