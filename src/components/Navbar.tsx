@@ -15,11 +15,13 @@ const Navbar = () => {
             <Image
               src="/plant-burger-logo.png"
               className="mr-3 h-6 sm:h-9"
-              alt="Plant Burger"
+              alt="Plant Burger Logo"
               width={60}
               height={60}
             />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              Plant-Burger
+            </span>
           </>
         </Link>
         <button
@@ -63,6 +65,7 @@ const Navbar = () => {
               <Link
                 href="/menu"
                 className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                aria-current="page"
               >
                 Speisekarte
               </Link>

@@ -7,6 +7,7 @@ import {
 
 export interface IArticle {
   title: string;
+  category: string;
   ingredients: string;
   allergyList: string;
   extras: StructuredTextGraphQlResponse;
@@ -38,6 +39,10 @@ const Article = ({ article }: ArticleProps) => {
       <p className="font-normal text-gray-700 dark:text-gray-400">
         {article.ingredients}
       </p>
+      <p className="font-normal text-gray-500 dark:text-gray-400">
+        ({article.allergyList})
+      </p>
+      <span className="font-bold text-gray-900">{article.price}</span>
       <StructuredText data={article.extras} />
     </div>
   );

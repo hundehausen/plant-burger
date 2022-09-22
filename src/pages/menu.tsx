@@ -1,11 +1,13 @@
 import { gql } from "graphql-request";
 import Article, { IArticle } from "../components/Article";
+import CustomHead from "../components/CustomHead";
 import { request } from "../lib/datocms";
 
 const menuQuery = gql`
   {
     allArticles {
       title
+      category
       ingredients
       allergyList
       price
@@ -44,12 +46,29 @@ export async function getStaticProps() {
 }
 
 const Menu = ({ articles }: { articles: IArticle[] }) => {
+  const burgers = articles.filter((article) => article.category === "Burger");
+  const sideDishes = articles.filter(
+    (article) => article.category === "Beilagen"
+  );
+
   return (
-    <div className="flex flex-row gap-8 p-8">
-      {articles.map((article) => (
-        <Article article={article} key={article.title} />
-      ))}
-    </div>
+    <>
+      <CustomHead title="Plant-Burger Speisekarte" />
+      <div className="text-center">
+        <span className="text-2xl font-bold">Burger</span>
+        <div className="flex flex-row flex-wrap gap-16 p-8 justify-center">
+          {burgers.map((burger) => (
+            <Article article={burger} key={burger.title} />
+          ))}
+        </div>
+        <span className="text-2xl font-bold">Beilagen</span>
+        <div className="flex flex-row flex-wrap gap-16 p-8 justify-center">
+          {sideDishes.map((sideDish) => (
+            <Article article={sideDish} key={sideDish.title} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 
