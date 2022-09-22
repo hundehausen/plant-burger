@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { FaInstagram, FaFacebook, FaGithub } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="text-center bg-white">
+    <footer className="text-center text-gray-700">
       <div className="px-4 py-12 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto space-y-6">
           <div id="social" className="flex justify-center gap-6">
@@ -30,6 +30,17 @@ const Footer = () => {
             </a>
 
             <a
+              href="mailto:info@plant-burger.de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaEnvelope
+                className="cursor-pointer hover:fill-secondary"
+                size={40}
+              />
+            </a>
+
+            <a
               href="https://github.com/hundehausen/plant-burger"
               target="_blank"
               rel="noopener noreferrer"
@@ -45,13 +56,13 @@ const Footer = () => {
             <ul className="flex flex-wrap justify-center text-sm font-bold gap-6">
               <li>
                 <Link href="/" rel="noopener noreferrer">
-                  <a className="text-gray-900 hover:text-secondary">Home</a>
+                  <a className="text-gray-800 hover:text-secondary">Home</a>
                 </Link>
               </li>
 
               <li>
                 <Link href="/menu" rel="noopener noreferrer">
-                  <a className="text-gray-900 hover:text-secondary">
+                  <a className="text-gray-800 hover:text-secondary">
                     Speisekarte
                   </a>
                 </Link>
@@ -59,7 +70,7 @@ const Footer = () => {
 
               <li>
                 <Link href="/impress" rel="noopener noreferrer">
-                  <a className="text-gray-900 hover:text-secondary">
+                  <a className="text-gray-800 hover:text-secondary">
                     Impressum
                   </a>
                 </Link>

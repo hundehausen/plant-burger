@@ -31,27 +31,23 @@ interface ArticleProps {
 
 const Article = ({ article }: ArticleProps) => {
   return (
-    <div className="max-w-xs rounded-md border-gray-300 border-2">
+    <div className="max-w-xs rounded-md border-gray-400 border-2">
       <Image
         data={article.image.responsiveImage}
         className="rounded-tl-md rounded-tr-md"
       />
       <div className="p-4">
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="text-2xl font-bold tracking-tight text-gray-800">
           {article.title}
         </h5>
         {article.ingredients && (
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            {article.ingredients}
-          </p>
+          <p className="font-normal text-gray-700">{article.ingredients}</p>
         )}
         {article.allergyList && (
-          <p className="font-normal text-gray-500 dark:text-gray-400">
-            ({article.allergyList})
-          </p>
+          <p className="font-normal text-gray-500">({article.allergyList})</p>
         )}
         {article.price && (
-          <span className="font-bold text-gray-900">{article.price}</span>
+          <span className="font-bold text-gray-800">{article.price}</span>
         )}
         {article.extras && <StructuredText data={article.extras} />}
       </div>
