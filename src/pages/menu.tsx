@@ -3,6 +3,7 @@ import Article, { IArticle } from "../components/Article";
 import CustomHead from "../components/CustomHead";
 import { request } from "../lib/datocms";
 import { propEq, partition } from "ramda";
+import Allergenes from "../components/Allergenes";
 
 const menuQuery = gql`
   {
@@ -99,14 +100,7 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
           </div>
         )}
 
-        <div id="allergenes" className="text-center">
-          <p className="text-2xl">Allergenkennzeichnung (nach EU-Verordnung)</p>
-          <p>
-            A Glutenhaltiges Getreide/ E Erdnüsse/ F Sojabohnen/ H
-            Schalenfrüchte/ L Sellerie/ M Senf/ N Sesam/ O Schwefeldioxid und
-            Sulfite/ P Lupinen
-          </p>
-        </div>
+        <Allergenes />
       </div>
     </>
   );
