@@ -50,7 +50,7 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
   const [burgers, next] = partition(propEq("category", "Burger"), articles);
   const [sideDishes, next2] = partition(propEq("category", "Beilagen"), next);
   const [drinks, otherStuff] = partition(propEq("category", "Getränke"), next2);
-  console.log(otherStuff);
+
   return (
     <>
       <CustomHead title="Plant-Burger Speisekarte" />

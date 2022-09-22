@@ -19,9 +19,7 @@ const Navbar = () => {
               width={60}
               height={60}
             />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Plant-Burger
-            </span>
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
           </>
         </Link>
         <button
