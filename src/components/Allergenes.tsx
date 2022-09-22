@@ -1,7 +1,7 @@
 const Allergenes = () => {
   return (
     <div className="text-center">
-      <p className="text-2xl pb-4">
+      <p className="text-xl md:text-2xl pb-4">
         Allergenkennzeichnung (nach EU-Verordnung)
       </p>
       <ul className="columns-2 max-w-3xl mx-auto text-left inline-block">

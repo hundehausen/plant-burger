@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
-  const handleBurgerButton = () => setExpanded((oldValue) => !oldValue);
+  const handleClick = () => setExpanded((oldValue) => !oldValue);
 
   return (
     <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
@@ -28,7 +28,7 @@ const Navbar = () => {
           className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded={expanded}
-          onClick={handleBurgerButton}
+          onClick={handleClick}
         >
           <span className="sr-only">Menü öffnen</span>
           <svg
@@ -49,17 +49,23 @@ const Navbar = () => {
           className={clsx("w-full md:block md:w-auto", !expanded && "hidden")}
           id="navbar-default"
         >
-          <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col p-4 mt-4 bg-gray-50 text-right text-xl rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <Link href="/" aria-current="page">
-                <a className="text-gray-700 hover:text-secondary transition">
+                <a
+                  className="text-gray-700 hover:text-secondary transition"
+                  onClick={handleClick}
+                >
                   Home
                 </a>
               </Link>
             </li>
             <li>
               <Link href="/menu" aria-current="page">
-                <a className="text-gray-700 hover:text-secondary transition">
+                <a
+                  className="text-gray-700 hover:text-secondary transition"
+                  onClick={handleClick}
+                >
                   Speisekarte
                 </a>
               </Link>
