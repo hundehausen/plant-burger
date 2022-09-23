@@ -2,8 +2,10 @@ import { gql } from 'graphql-request';
 
 import CustomHead from '../components/CustomHead';
 import Events, { IEvent } from '../components/Events';
+import { GoogleReviews, Review } from '../components/GoogleReviews';
 import InstagramPosts from '../components/InstagramPosts';
 import { request } from '../lib/datocms';
+import { fetchGoogleReviews } from '../lib/googleMapsRatings';
 
 const eventQuery = gql`
   {
@@ -21,13 +23,14 @@ const eventQuery = gql`
   }
 `;
 
-const Home = ({ events }: { events: IEvent[] }) => {
+const Home = ({ events, reviews }: { events: IEvent[]; reviews: Review[] }) => {
   return (
     <>
       <CustomHead title="Plant-Burger" />
       <main className="flex flex-col justify-center">
         <Events events={events} />
         <InstagramPosts />
+        <GoogleReviews reviews={reviews} />
       </main>
     </>
   );
@@ -41,8 +44,9 @@ export async function getStaticProps() {
   const events: QueryResponse = await request({
     query: eventQuery,
   });
+  const reviews = await fetchGoogleReviews();
   return {
-    props: { events: events.allEvents },
+    props: { events: events.allEvents, reviews },
   };
 }
 
