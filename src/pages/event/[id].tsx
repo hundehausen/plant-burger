@@ -51,14 +51,6 @@ const EventPage = ({ event }: EventPageProps) => {
     return <p className="text-2xl">Kein Event gefunden</p>;
   }
 
-  const calenderEvent = {
-    title: event.name,
-    description: event.description,
-    startTime: event.startDate,
-    endTime: event.endDate,
-    location: event.locationAddress,
-  };
-
   return (
     <>
       <CustomHead title={`Plant-Burger @ ${event.name}`} />
@@ -67,11 +59,13 @@ const EventPage = ({ event }: EventPageProps) => {
           <p className="text-2xl font-bold">{event.name}</p>
           {event.startDate && event.endDate && (
             <p className="">
-              {formatDate(event.startDate)} bis {formatDate(event.endDate)}
+              {`📅 ${formatDate(event.startDate)} bis ${formatDate(
+                event.endDate
+              )}`}
             </p>
           )}
           {event.locationAddress && (
-            <p className="text-gray-700 font-light">{event.locationAddress}</p>
+            <p className="text-gray-700 font-light">{`📍 ${event.locationAddress}`}</p>
           )}
           {event.description && (
             <p className="text-gray-700">{event.description}</p>

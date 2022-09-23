@@ -26,8 +26,8 @@ const Event = ({ event }: { event: IEvent }) => {
           {event.name}
         </p>
         {event.startDate && event.endDate && (
-          <p className="">
-            {formatDate(event.startDate)} bis {formatDate(event.endDate)}
+          <p>
+            {`${formatDate(event.startDate)} bis ${formatDate(event.endDate)}`}
           </p>
         )}
         {event.description && (
