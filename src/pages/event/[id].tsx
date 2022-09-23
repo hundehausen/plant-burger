@@ -1,11 +1,12 @@
+import { gql } from 'graphql-request';
 import type { GetStaticProps } from 'next';
 import dynamic from 'next/dynamic';
-import { gql } from 'graphql-request';
-import { request } from '../../lib/datocms';
+import { useMemo } from 'react';
+
 import CustomHead from '../../components/CustomHead';
 import { IEvent } from '../../components/Events';
 import { formatDate } from '../../lib/dateHelpers';
-import { useMemo } from 'react';
+import { request } from '../../lib/datocms';
 
 const QUERY_BY_ID = gql`
   query ($id: ItemId!) {

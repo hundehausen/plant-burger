@@ -1,5 +1,5 @@
-import { InstagramEmbed } from 'react-social-media-embed';
 import { FaInstagram } from 'react-icons/fa';
+import { InstagramEmbed } from 'react-social-media-embed';
 
 const InstagramPosts = () => {
   return (

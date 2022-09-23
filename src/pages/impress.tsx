@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+
 import CustomHead from '../components/CustomHead';
 
 const Impress: NextPage = () => {

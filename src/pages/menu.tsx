@@ -1,9 +1,10 @@
 import { gql } from 'graphql-request';
+import { partition,propEq } from 'ramda';
+
+import Allergenes from '../components/Allergenes';
 import Article, { IArticle } from '../components/Article';
 import CustomHead from '../components/CustomHead';
 import { request } from '../lib/datocms';
-import { propEq, partition } from 'ramda';
-import Allergenes from '../components/Allergenes';
 
 const menuQuery = gql`
   {

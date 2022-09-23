@@ -1,8 +1,10 @@
-import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { IEvent } from './Events';
+
 import type { LatLngExpression } from 'leaflet';
 import { Icon } from 'leaflet';
+import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+
+import { IEvent } from './Events';
 
 const Map = ({ event }: { event: IEvent }) => {
   const position: LatLngExpression = [
