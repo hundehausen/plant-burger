@@ -1,31 +1,30 @@
-import { format, parseISO } from "date-fns";
-import { de } from "date-fns/locale";
 import Link from "next/link";
+import { formatDate } from "../lib/dateHelpers";
 import CustomButton from "./CustomButton";
 
 export interface IEvent {
   id: number;
   name: string;
   description: string;
-  location: string;
+  location: {
+    latitude: string;
+    longitude: string;
+  };
   startDate: string;
   endDate: string;
+  updatedAt: string;
 }
 
 const Event = ({ event }: { event: IEvent }) => {
   return (
     <div className="max-w-sm rounded-md border-gray-800 border-2">
       <div className="p-4">
-        <p>{event.id}</p>
         <p className="text-2xl font-bold tracking-tight text-gray-800">
           {event.name}
         </p>
         {event.startDate && event.endDate && (
           <p className="">
-            {format(parseISO(event.startDate), "dd.MM.yyyy HH:mm", {
-              locale: de,
-            })}{" "}
-            bis {format(parseISO(event.endDate), "dd.MM.yyyy HH:mm")}
+            {formatDate(event.startDate)} bis {formatDate(event.endDate)}
           </p>
         )}
         {event.description && (
