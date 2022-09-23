@@ -1,21 +1,48 @@
-import type { NextPage } from "next";
 import CustomHead from "../components/CustomHead";
 import { InstagramEmbed } from "react-social-media-embed";
+import Events, { IEvent } from "../components/Events";
+import { gql } from "graphql-request";
+import { request } from "../lib/datocms";
+import InstagramPosts from "../components/InstagramPosts";
 
-const Home: NextPage = () => {
+const eventQuery = gql`
+  {
+    allEvents {
+      name
+      description
+      location {
+        latitude
+        longitude
+      }
+      startDate
+      endDate
+    }
+  }
+`;
+
+const Home = ({ events }: { events: IEvent[] }) => {
   return (
     <>
       <CustomHead title="Plant-Burger" />
-      <main>
-        <div className="flex justify-center">
-          <InstagramEmbed
-            url="https://www.instagram.com/p/CisrxNzLX_b/"
-            width={350}
-          />
-        </div>
+      <main className="flex flex-col justify-center">
+        <Events events={events} />
+        <InstagramPosts />
       </main>
     </>
   );
 };
+
+interface QueryResponse {
+  allEvents: IEvent[];
+}
+
+export async function getStaticProps() {
+  const events: QueryResponse = await request({
+    query: eventQuery,
+  });
+  return {
+    props: { events: events.allEvents },
+  };
+}
 
 export default Home;

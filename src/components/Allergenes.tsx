@@ -34,7 +34,7 @@ const Allergenes = () => {
         </li>
       </ul>
       <p className="text-gray-600 mt-2 italic">
-        Bei uns sind alle Zutaten, sowie die Zubereitung 100 % vegan.
+        Bei uns sind alle Zutaten, sowie die Zubereitung 100 % vegan 🌱
       </p>
     </div>
   );
