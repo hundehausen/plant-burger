@@ -2,7 +2,7 @@ import { GraphQLClient } from "graphql-request";
 
 interface RequestProps {
   query: string;
-  variables?: string;
+  variables?: unknown;
   includeDrafts?: boolean;
   excludeInvalid?: boolean;
 }
