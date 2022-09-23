@@ -1,5 +1,4 @@
 import CustomHead from "../components/CustomHead";
-import { InstagramEmbed } from "react-social-media-embed";
 import Events, { IEvent } from "../components/Events";
 import { gql } from "graphql-request";
 import { request } from "../lib/datocms";
@@ -8,6 +7,7 @@ import InstagramPosts from "../components/InstagramPosts";
 const eventQuery = gql`
   {
     allEvents {
+      id
       name
       description
       location {
