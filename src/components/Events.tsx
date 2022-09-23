@@ -54,7 +54,7 @@ const Events = ({ events }: { events: IEvent[] }) => {
       <p className="text-xl md:text-2xl text-center mb-4">
         Events mit Plant-Burger 📅
       </p>
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="flex flex-wrap gap-4 justify-center mx-4">
         {upcomingEvents.map((event) => (
           <Event key={event.name} event={event} />
         ))}
