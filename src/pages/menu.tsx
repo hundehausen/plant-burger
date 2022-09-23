@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { partition,propEq } from 'ramda';
+import { partition, propEq } from 'ramda';
 
 import Allergenes from '../components/Allergenes';
 import Article, { IArticle } from '../components/Article';
