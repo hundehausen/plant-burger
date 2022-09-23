@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { formatDate } from "../lib/dateHelpers";
 import CustomButton from "./CustomButton";
-
+import { partition } from "ramda";
+import { isFuture, parseISO } from "date-fns";
 export interface IEvent {
   id: number;
   name: string;
@@ -42,13 +43,18 @@ const Event = ({ event }: { event: IEvent }) => {
 };
 
 const Events = ({ events }: { events: IEvent[] }) => {
+  const [upcomingEvents, pastEvents] = partition(
+    (event) => isFuture(parseISO(event.endDate)),
+    events
+  );
+
   return (
     <div className="flex flex-col justify-center mx-auto my-4">
       <p className="text-xl md:text-2xl text-center mb-4">
         Events mit Plant-Burger 📅
       </p>
       <div className="flex flex-wrap gap-4 justify-center">
-        {events.map((event) => (
+        {upcomingEvents.map((event) => (
           <Event key={event.name} event={event} />
         ))}
       </div>

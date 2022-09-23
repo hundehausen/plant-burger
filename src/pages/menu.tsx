@@ -55,10 +55,10 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
   return (
     <>
       <CustomHead title="Plant-Burger Speisekarte" />
+      <p className="text-center text-2xl font-bold">Speisekarte</p>
       <div className="text-center p-8">
         {burgers.length > 0 && (
           <div className="category">
-            <span className="text-2xl font-bold">Burger</span>
             <div className="flex flex-row flex-wrap gap-16 p-8 justify-center">
               {burgers.map((burger) => (
                 <Article article={burger} key={burger.title} />
@@ -69,19 +69,10 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
 
         {sideDishes.length > 0 && (
           <div className="category">
-            <span className="text-2xl font-bold">Beilagen</span>
             <div className="flex flex-row flex-wrap gap-16 p-8 justify-center">
               {sideDishes.map((sideDish) => (
                 <Article article={sideDish} key={sideDish.title} />
               ))}
-            </div>
-          </div>
-        )}
-
-        {drinks.length > 0 && (
-          <div className="category">
-            <span className="text-2xl font-bold">Getränke</span>
-            <div className="flex flex-row flex-wrap gap-16 p-8 justify-center">
               {drinks.map((drink) => (
                 <Article article={drink} key={drink.title} />
               ))}
