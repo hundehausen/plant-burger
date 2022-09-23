@@ -6,6 +6,7 @@ export interface IEvent {
   id: number;
   name: string;
   description: string;
+  locationAddress: string;
   location: {
     latitude: string;
     longitude: string;
@@ -31,7 +32,9 @@ const Event = ({ event }: { event: IEvent }) => {
           <p className="text-gray-700">{event.description}</p>
         )}
         <Link href={`/event/${event.id}`}>
-          <CustomButton>Mehr Infos</CustomButton>
+          <a>
+            <CustomButton>Mehr Infos</CustomButton>
+          </a>
         </Link>
       </div>
     </div>
