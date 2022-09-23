@@ -47,7 +47,7 @@ const Article = ({ article }: ArticleProps) => {
           <p className="text-lg text-gray-500">({article.allergyList})</p>
         )}
         {article.price && (
-          <span className="text-lgfont-bold text-gray-800">
+          <span className="text-xl font-bold text-gray-800">
             {article.price}
           </span>
         )}

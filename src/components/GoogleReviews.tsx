@@ -24,7 +24,7 @@ const Rating = ({ rating }: { rating: number }) => {
     <FaStar key={index} className="text-grey-300" />
   ));
   return (
-    <div className="flex items-center mb-5" title={`${rating} von 5 Sternen`}>
+    <div className="flex items-center mb-4" title={`${rating} von 5 Sternen`}>
       {yellowStars.map((item) => item)}
 
       {grayStars}
