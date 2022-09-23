@@ -59,7 +59,7 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
       <div className="text-center p-8">
         {burgers.length > 0 && (
           <div id="burgers" className="category">
-            <div className="flex flex-row flex-wrap gap-16 p-8 justify-center">
+            <div className="flex flex-row flex-wrap gap-8 p-8 justify-center">
               {burgers.map((burger) => (
                 <Article article={burger} key={burger.title} />
               ))}
@@ -69,7 +69,7 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
 
         {(sideDishes.length > 0 || drinks.length > 0) && (
           <div id="side-dishes-and-drinks" className="category">
-            <div className="flex flex-row flex-wrap gap-16 p-8 justify-center">
+            <div className="flex flex-row flex-wrap gap-8 p-8 justify-center">
               {sideDishes.map((sideDish) => (
                 <Article article={sideDish} key={sideDish.title} />
               ))}
@@ -83,7 +83,7 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
         {otherStuff.length > 0 && (
           <div id="other-articles" className="category">
             <span className="text-2xl font-bold">Anderes</span>
-            <div className="flex flex-row flex-wrap gap-16 p-8 justify-center">
+            <div className="flex flex-row flex-wrap gap-8 p-8 justify-center">
               {otherStuff.map((otherArticle) => (
                 <Article article={otherArticle} key={otherArticle.title} />
               ))}
