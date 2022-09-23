@@ -1,8 +1,9 @@
 const Allergenes = () => {
   return (
     <div>
-      <p className="text-xl md:text-2xl pb-4">
-        Allergenkennzeichnung (nach EU-Verordnung)
+      <p className="text-2xl md:text-3xl pb-4">
+        <span className="inline-block">Allergenkennzeichnung</span>{" "}
+        <span className="inline-block">(nach EU-Verordnung)</span>
       </p>
       <ul className="columns-2 md:columns-3 max-w-3xl mx-auto text-left inline-block">
         <li>
@@ -33,7 +34,7 @@ const Allergenes = () => {
           <strong>P</strong> - Lupinen
         </li>
       </ul>
-      <p className="text-gray-600 mt-2 italic">
+      <p className="text-gray-600 mt-2 italic md:text-lg">
         Bei uns sind alle Zutaten, sowie die Zubereitung 100 % vegan 🌱
       </p>
     </div>

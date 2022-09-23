@@ -37,17 +37,19 @@ const Article = ({ article }: ArticleProps) => {
         className="rounded-tl-md rounded-tr-md"
       />
       <div className="p-4">
-        <h5 className="text-2xl font-bold tracking-tight text-gray-800">
+        <h5 className="text-3xl font-bold tracking-tight text-gray-800">
           {article.title}
         </h5>
         {article.ingredients && (
-          <p className="font-normal text-gray-700">{article.ingredients}</p>
+          <p className="text-lg text-gray-700">{article.ingredients}</p>
         )}
         {article.allergyList && (
-          <p className="font-normal text-gray-500">({article.allergyList})</p>
+          <p className="text-lg text-gray-500">({article.allergyList})</p>
         )}
         {article.price && (
-          <span className="font-bold text-gray-800">{article.price}</span>
+          <span className="text-lgfont-bold text-gray-800">
+            {article.price}
+          </span>
         )}
         {article.extras && <StructuredText data={article.extras} />}
       </div>
