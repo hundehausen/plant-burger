@@ -1,7 +1,7 @@
-import clsx from "clsx";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import clsx from 'clsx';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -46,7 +46,7 @@ const Navbar = () => {
           </svg>
         </button>
         <div
-          className={clsx("w-full md:block md:w-auto", !expanded && "hidden")}
+          className={clsx('w-full md:block md:w-auto', !expanded && 'hidden')}
           id="navbar-default"
         >
           <ul className="flex flex-col p-4 mt-4 bg-gray-50 text-right text-xl rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-base md:font-medium md:border-0 md:bg-white">

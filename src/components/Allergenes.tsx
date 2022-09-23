@@ -2,7 +2,7 @@ const Allergenes = () => {
   return (
     <div>
       <p className="text-2xl md:text-3xl pb-4">
-        <span className="inline-block">Allergenkennzeichnung</span>{" "}
+        <span className="inline-block">Allergenkennzeichnung</span>{' '}
         <span className="inline-block">(nach EU-Verordnung)</span>
       </p>
       <ul className="columns-2 md:columns-3 max-w-3xl mx-auto text-left inline-block">

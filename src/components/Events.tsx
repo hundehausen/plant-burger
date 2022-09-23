@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { formatDate } from "../lib/dateHelpers";
-import CustomButton from "./CustomButton";
-import { partition } from "ramda";
-import { isFuture, parseISO } from "date-fns";
+import Link from 'next/link';
+import { formatDate } from '../lib/dateHelpers';
+import CustomButton from './CustomButton';
+import { partition } from 'ramda';
+import { isFuture, parseISO } from 'date-fns';
 export interface IEvent {
   id: number;
   name: string;

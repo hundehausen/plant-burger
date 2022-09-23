@@ -1,11 +1,11 @@
-import type { GetStaticProps } from "next";
-import dynamic from "next/dynamic";
-import { gql } from "graphql-request";
-import { request } from "../../lib/datocms";
-import CustomHead from "../../components/CustomHead";
-import { IEvent } from "../../components/Events";
-import { formatDate } from "../../lib/dateHelpers";
-import { useMemo } from "react";
+import type { GetStaticProps } from 'next';
+import dynamic from 'next/dynamic';
+import { gql } from 'graphql-request';
+import { request } from '../../lib/datocms';
+import CustomHead from '../../components/CustomHead';
+import { IEvent } from '../../components/Events';
+import { formatDate } from '../../lib/dateHelpers';
+import { useMemo } from 'react';
 
 const QUERY_BY_ID = gql`
   query ($id: ItemId!) {
@@ -39,7 +39,7 @@ interface EventPageProps {
 const EventPage = ({ event }: EventPageProps) => {
   const Map = useMemo(
     () =>
-      dynamic(() => import("../../components/Map"), {
+      dynamic(() => import('../../components/Map'), {
         loading: () => <p>Map is loading</p>,
         ssr: false,
       }),

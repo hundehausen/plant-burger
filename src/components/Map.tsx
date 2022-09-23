@@ -1,8 +1,8 @@
-import { MapContainer, Marker, TileLayer } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import { IEvent } from "./Events";
-import type { LatLngExpression } from "leaflet";
-import { Icon } from "leaflet";
+import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import { IEvent } from './Events';
+import type { LatLngExpression } from 'leaflet';
+import { Icon } from 'leaflet';
 
 const Map = ({ event }: { event: IEvent }) => {
   const position: LatLngExpression = [
@@ -10,7 +10,7 @@ const Map = ({ event }: { event: IEvent }) => {
     Number(event.location.longitude),
   ];
 
-  Icon.Default.imagePath = "/";
+  Icon.Default.imagePath = '/';
 
   return (
     <MapContainer

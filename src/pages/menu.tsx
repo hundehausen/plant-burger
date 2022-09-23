@@ -1,9 +1,9 @@
-import { gql } from "graphql-request";
-import Article, { IArticle } from "../components/Article";
-import CustomHead from "../components/CustomHead";
-import { request } from "../lib/datocms";
-import { propEq, partition } from "ramda";
-import Allergenes from "../components/Allergenes";
+import { gql } from 'graphql-request';
+import Article, { IArticle } from '../components/Article';
+import CustomHead from '../components/CustomHead';
+import { request } from '../lib/datocms';
+import { propEq, partition } from 'ramda';
+import Allergenes from '../components/Allergenes';
 
 const menuQuery = gql`
   {
@@ -48,9 +48,9 @@ export async function getStaticProps() {
 }
 
 const Menu = ({ articles }: { articles: IArticle[] }) => {
-  const [burgers, next] = partition(propEq("category", "Burger"), articles);
-  const [sideDishes, next2] = partition(propEq("category", "Beilagen"), next);
-  const [drinks, otherStuff] = partition(propEq("category", "Getränke"), next2);
+  const [burgers, next] = partition(propEq('category', 'Burger'), articles);
+  const [sideDishes, next2] = partition(propEq('category', 'Beilagen'), next);
+  const [drinks, otherStuff] = partition(propEq('category', 'Getränke'), next2);
 
   return (
     <>

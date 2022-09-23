@@ -1,8 +1,8 @@
-import CustomHead from "../components/CustomHead";
-import Events, { IEvent } from "../components/Events";
-import { gql } from "graphql-request";
-import { request } from "../lib/datocms";
-import InstagramPosts from "../components/InstagramPosts";
+import CustomHead from '../components/CustomHead';
+import Events, { IEvent } from '../components/Events';
+import { gql } from 'graphql-request';
+import { request } from '../lib/datocms';
+import InstagramPosts from '../components/InstagramPosts';
 
 const eventQuery = gql`
   {

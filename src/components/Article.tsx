@@ -3,7 +3,7 @@ import {
   Image,
   StructuredText,
   StructuredTextGraphQlResponse,
-} from "react-datocms";
+} from 'react-datocms';
 
 export interface IArticle {
   title: string;
