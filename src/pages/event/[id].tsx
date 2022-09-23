@@ -1,10 +1,11 @@
 import type { GetStaticProps } from "next";
+import dynamic from "next/dynamic";
 import { gql } from "graphql-request";
 import { request } from "../../lib/datocms";
 import CustomHead from "../../components/CustomHead";
 import { IEvent } from "../../components/Events";
 import { formatDate } from "../../lib/dateHelpers";
-import GoogleMapReact from "google-map-react";
+import { useMemo } from "react";
 
 const QUERY_BY_ID = gql`
   query ($id: ItemId!) {
@@ -35,9 +36,19 @@ interface EventPageProps {
 }
 
 const EventPage = ({ event }: EventPageProps) => {
+  const Map = useMemo(
+    () =>
+      dynamic(() => import("../../components/Map"), {
+        loading: () => <p>Map is loading</p>,
+        ssr: false,
+      }),
+    []
+  );
+
   if (!event) {
     return <p className="text-2xl">Kein Event gefunden</p>;
   }
+
   return (
     <>
       <CustomHead title={`Plant-Burger @ ${event.name}`} />
@@ -58,19 +69,7 @@ const EventPage = ({ event }: EventPageProps) => {
             </p>
           )}
           {event.location.latitude && event.location.longitude && (
-            <div className="h-96 w-full">
-              <GoogleMapReact
-                bootstrapURLKeys={{
-                  key: process.env.NEXT_GOOGLE_MAPS_API_TOKEN as string,
-                }}
-                defaultCenter={{
-                  lat: event.location.latitude as unknown as number,
-                  lng: event.location.longitude as unknown as number,
-                }}
-                defaultZoom={11}
-                yesIWantToUseGoogleMapApiInternals
-              ></GoogleMapReact>
-            </div>
+            <Map event={event} />
           )}
         </div>
       </main>
