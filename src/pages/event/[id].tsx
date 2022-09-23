@@ -43,7 +43,7 @@ const EventPage = ({ event }: EventPageProps) => {
       <CustomHead title={`Plant-Burger @ ${event.name}`} />
       <main className="max-w-3xl mx-auto">
         <div className="p-6 border-4 border-gray-900 rounded-3xl mx-4">
-          <p className="text-2xl">{event.name}</p>
+          <p className="text-2xl font-bold">{event.name}</p>
           {event.startDate && event.endDate && (
             <p className="">
               {formatDate(event.startDate)} bis {formatDate(event.endDate)}
