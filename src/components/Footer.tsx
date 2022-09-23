@@ -1,5 +1,11 @@
 import Link from 'next/link';
-import { FaEnvelope, FaFacebook, FaGithub, FaInstagram } from 'react-icons/fa';
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaPhone,
+} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -30,9 +36,21 @@ const Footer = () => {
             </a>
 
             <a
+              href="https://github.com/hundehausen/plant-burger"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub
+                className="cursor-pointer hover:fill-secondary"
+                size={40}
+              />
+            </a>
+
+            <a
               href="mailto:info@plant-burger.de"
               target="_blank"
               rel="noopener noreferrer"
+              title="Schreiben Sie uns gerne eine E-Mail!"
             >
               <FaEnvelope
                 className="cursor-pointer hover:fill-secondary"
@@ -41,11 +59,12 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://github.com/hundehausen/plant-burger"
+              href="tel:01608121951"
               target="_blank"
               rel="noopener noreferrer"
+              title="Rufen Sie uns gerne an!"
             >
-              <FaGithub
+              <FaPhone
                 className="cursor-pointer hover:fill-secondary"
                 size={40}
               />
