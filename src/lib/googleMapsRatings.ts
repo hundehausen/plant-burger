@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { partition, propEq } from 'ramda';
 
-import { Review } from '../components/GoogleReviews';
+import type { Review } from '../components/GoogleReviews';
 
 export const fetchGoogleReviews = async () => {
   try {
