@@ -56,9 +56,7 @@ const GoogleReview = ({ review }: { review: Review }) => {
         </div>
       </div>
       <Rating rating={review.rating} />
-      <p className="mb-2 font-light text-gray-500">
-        {review.text || 'Kein Text hinterlassen'}
-      </p>
+      <p className="font-light">{review.text || 'Kein Text hinterlassen'}</p>
     </article>
   );
 };
