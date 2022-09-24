@@ -94,6 +94,14 @@ const Footer = () => {
                   </a>
                 </Link>
               </li>
+
+              <li>
+                <Link href="/privacy" rel="noopener noreferrer">
+                  <a className="text-gray-800 hover:text-secondary">
+                    Datenschutzerklärung
+                  </a>
+                </Link>
+              </li>
             </ul>
           </nav>
 

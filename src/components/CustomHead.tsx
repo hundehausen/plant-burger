@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const CustomHead = ({ title }: { title: string }) => {
+const CustomHead = ({ title, index }: { title: string; index?: boolean }) => {
   return (
     <Head>
       <title>{title}</title>
@@ -10,6 +10,7 @@ const CustomHead = ({ title }: { title: string }) => {
       />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="UTF-8" />
+      {!index && <meta name="robots" content="noindex, follow" />}
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );

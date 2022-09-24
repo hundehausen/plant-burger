@@ -3,9 +3,9 @@
     <img src="public/plant-burger-logo.png" width="200" height="200">
 </p>
 
-Made with Next.js (SSG)
-Deployed on Vercel
-DatoCMS
+Made with Next.js (SSG)  
+Deploys to Vercel  
+DatoCMS  
 
 ## Getting Started
 
