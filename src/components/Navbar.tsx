@@ -68,7 +68,7 @@ const Navbar = () => {
                   className="text-gray-700 hover:text-secondary transition"
                   onClick={handleClick}
                 >
-                  Anfrage
+                  Catering
                 </a>
               </Link>
             </li>

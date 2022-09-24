@@ -16,7 +16,7 @@ const schema = z.object({
       invalid_type_error: 'Betreff muss eine Zeichenkette sein',
     })
     .min(4, {
-      message: 'Bitte nutzen Sie midnestens vier Zeichen für den Betreff',
+      message: 'Bitte nutzen Sie mindestens vier Zeichen für den Betreff',
     }),
   email: z
     .string({
@@ -47,6 +47,9 @@ const ContactForm = () => {
   return (
     <form onSubmit={onSubmit} className="max-w-lg mx-auto px-4">
       <p className="text-2xl font-bold">Kontaktieren Sie Plant-Burger 💬</p>
+      <p className="text-sm font-thin">
+        Wir nutzen den Dienstleister SendGrid für das Kontaktformular.
+      </p>
       <label
         htmlFor="name"
         className="block mb-2 font-medium text-gray-900 mt-4"
@@ -56,10 +59,12 @@ const ContactForm = () => {
       <input
         id="name"
         {...register('name')}
-        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md"
+        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md mb-1"
       />
       {errors.name?.message && (
-        <p className="text-sm">{errors.name?.message.toString()}</p>
+        <p className="text-sm text-gray-700">
+          {errors.name?.message.toString()}
+        </p>
       )}
       <label
         htmlFor="subject"
@@ -70,10 +75,12 @@ const ContactForm = () => {
       <input
         id="subject"
         {...register('subject')}
-        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md"
+        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md mb-1"
       />
       {errors.subject?.message && (
-        <p className="text-sm">{errors.subject.message?.toString()}</p>
+        <p className="text-sm text-gray-700">
+          {errors.subject.message?.toString()}
+        </p>
       )}
       <label
         htmlFor="email"
@@ -84,10 +91,12 @@ const ContactForm = () => {
       <input
         id="email"
         {...register('email')}
-        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md"
+        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md mb-1"
       />
       {errors.email?.message && (
-        <p className="text-sm">{errors.email.message.toString()}</p>
+        <p className="text-sm text-gray-700">
+          {errors.email.message.toString()}
+        </p>
       )}
       <label
         htmlFor="message"
@@ -99,10 +108,12 @@ const ContactForm = () => {
         id="message"
         {...register('message')}
         rows={4}
-        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md min-h-[100]"
+        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md min-h-[100] mb-1"
       ></textarea>
       {errors.message?.message && (
-        <p className="text-sm">{errors.message.message.toString()}</p>
+        <p className="text-sm text-gray-700">
+          {errors.message.message.toString()}
+        </p>
       )}
       <input
         type="submit"
@@ -110,8 +121,15 @@ const ContactForm = () => {
         className="text-gray-900 hover:text-white border-2 border-gray-900 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 my-4 cursor-pointer"
         disabled={formState.isSubmitting}
       />
-      {formState.isSubmitSuccessful && (
+      {formState.isSubmitSuccessful ? (
         <p className="text-sm">Nachricht erfolgreich gesendet ✅</p>
+      ) : (
+        formState.isSubmitted &&
+        !formState.isSubmitSuccessful && (
+          <p className="text-sm">
+            Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten ❌
+          </p>
+        )
       )}
     </form>
   );
