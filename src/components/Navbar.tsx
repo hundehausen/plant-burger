@@ -12,13 +12,15 @@ const Navbar = () => {
     <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded">
       <div className="container flex flex-wrap justify-between items-center mx-auto max-w-50 px-4 md:px-24">
         <Link href="/">
-          <Image
-            src="/plant-burger-logo.png"
-            className="mr-3 h-6 sm:h-9 cursor-pointer"
-            alt="Plant Burger Logo"
-            width={60}
-            height={60}
-          />
+          <a>
+            <Image
+              src="/plant-burger-logo.png"
+              className="mr-3 h-6 sm:h-9 cursor-pointer"
+              alt="Plant Burger Logo"
+              width={60}
+              height={60}
+            />
+          </a>
         </Link>
         <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
 
@@ -48,6 +50,7 @@ const Navbar = () => {
                 </a>
               </Link>
             </li>
+
             <li>
               <Link href="/menu" aria-current="page">
                 <a
@@ -55,6 +58,17 @@ const Navbar = () => {
                   onClick={handleClick}
                 >
                   Speisekarte
+                </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/contact" aria-current="page">
+                <a
+                  className="text-gray-700 hover:text-secondary transition"
+                  onClick={handleClick}
+                >
+                  Anfrage
                 </a>
               </Link>
             </li>

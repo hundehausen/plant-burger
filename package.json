@@ -13,6 +13,8 @@
     "prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\""
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.8",
+    "@sendgrid/mail": "^7.7.0",
     "axios": "^0.27.2",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
@@ -24,9 +26,11 @@
     "react": "18.2.0",
     "react-datocms": "^3.1.1",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.36.1",
     "react-icons": "^4.4.0",
     "react-leaflet": "^4.0.2",
-    "react-social-media-embed": "^2.2.2"
+    "react-social-media-embed": "^2.2.2",
+    "zod": "^3.19.1"
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.7",
