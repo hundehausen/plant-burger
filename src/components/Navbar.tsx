@@ -9,8 +9,8 @@ const Navbar = () => {
   const handleClick = () => setExpanded((oldValue) => !oldValue);
 
   return (
-    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded">
-      <div className="container flex flex-wrap justify-between items-center mx-auto max-w-50 px-4 md:px-24">
+    <nav className="bg-white border-gray-200 px-2 py-2.5 rounded">
+      <div className="container flex flex-wrap justify-between items-center mx-auto max-w-50 md:px-24">
         <Link href="/">
           <a>
             <Image

@@ -45,7 +45,7 @@ const ContactForm = () => {
   );
 
   return (
-    <form onSubmit={onSubmit} className="max-w-lg mx-auto px-4">
+    <form onSubmit={onSubmit} className="max-w-lg mx-auto">
       <p className="text-2xl font-bold">Kontaktieren Sie Plant-Burger 💬</p>
       <p className="text-sm font-thin">
         Wir nutzen den Dienstleister SendGrid für das Kontaktformular.
