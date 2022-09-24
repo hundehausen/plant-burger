@@ -1,11 +1,12 @@
 # Plant-Burger Website
+
 <p align="center">
     <img src="public/plant-burger-logo.png" width="200" height="200">
 </p>
 
 Made with Next.js (SSG)  
 Deploys to Vercel  
-DatoCMS  
+DatoCMS
 
 ## Getting Started
 
