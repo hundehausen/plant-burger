@@ -88,6 +88,12 @@ const Footer = () => {
               </li>
 
               <li>
+                <Link href="/contact" rel="noopener noreferrer">
+                  <a className="text-gray-800 hover:text-secondary">Anfrage</a>
+                </Link>
+              </li>
+
+              <li>
                 <Link href="/impress" rel="noopener noreferrer">
                   <a className="text-gray-800 hover:text-secondary">
                     Impressum

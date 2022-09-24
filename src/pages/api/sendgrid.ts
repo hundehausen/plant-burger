@@ -14,6 +14,7 @@ async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
         subject: subject,
         html: `<div><p>Neue Nachricht von ${name} (${email})</p><p>${message}</p></div>`,
       });
+      return res.status(200).json({ message: 'E-Mail erfolgreich gesendet' });
     } catch (error) {
       console.log(error);
       if (error instanceof Error) {
@@ -21,9 +22,9 @@ async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
       }
       return res.status(500).json({ error: 'Error occured sending E-Mail' });
     }
+  } else {
+    return res.status(405).json('Method not allowed');
   }
-
-  return res.status(405).json('Method not allowed');
 }
 
 export default sendEmail;
