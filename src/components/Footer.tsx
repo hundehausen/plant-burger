@@ -1,11 +1,5 @@
 import Link from 'next/link';
-import {
-  FaEnvelope,
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaPhone,
-} from 'react-icons/fa';
+import { FaEnvelope, FaFacebook, FaInstagram, FaPhone } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -30,17 +24,6 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <FaFacebook
-                className="cursor-pointer hover:fill-secondary"
-                size={40}
-              />
-            </a>
-
-            <a
-              href="https://github.com/hundehausen/plant-burger"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub
                 className="cursor-pointer hover:fill-secondary"
                 size={40}
               />

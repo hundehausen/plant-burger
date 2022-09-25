@@ -11,7 +11,7 @@ const CustomHead = ({ title, index }: { title: string; index?: boolean }) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="UTF-8" />
       {!index && <meta name="robots" content="noindex, follow" />}
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" href="/favicon-transparent.png" />
     </Head>
   );
 };

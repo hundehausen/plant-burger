@@ -4,7 +4,6 @@ import AboutUs from '../components/AboutUs';
 import CustomHead from '../components/CustomHead';
 import Events, { IEvent } from '../components/Events';
 import { GoogleReviews, Review } from '../components/GoogleReviews';
-import InstagramPosts from '../components/InstagramPosts';
 import { request } from '../lib/datocms';
 import { fetchGoogleReviews } from '../lib/googleMapsRatings';
 
