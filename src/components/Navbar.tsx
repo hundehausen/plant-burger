@@ -10,14 +10,14 @@ const Navbar = () => {
 
   return (
     <nav className="mb-8 rounded border-gray-200 bg-white px-2 py-2.5">
-      <div className="max-w-50 container mx-auto flex flex-wrap items-center justify-between md:px-24">
+      <div className="max-w-50 container mx-auto flex flex-wrap items-center justify-between md:px-32">
         <Link href="/">
           <a>
             <Image
               src="/plant-burger-logo.png"
-              className="max-h-16 cursor-pointer"
+              className="max-h-16 w-full cursor-pointer"
               width={64}
-              height={64}
+              height={73}
               alt="Plant Burger Logo"
             />
           </a>
