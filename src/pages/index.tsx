@@ -1,5 +1,6 @@
 import { gql } from 'graphql-request';
 
+import AboutUs from '../components/AboutUs';
 import CustomHead from '../components/CustomHead';
 import Events, { IEvent } from '../components/Events';
 import { GoogleReviews, Review } from '../components/GoogleReviews';
@@ -28,8 +29,9 @@ const Home = ({ events, reviews }: { events: IEvent[]; reviews: Review[] }) => {
     <>
       <CustomHead title="Plant-Burger" />
       <main className="flex flex-col justify-center">
+        <AboutUs />
         <Events events={events} />
-        <InstagramPosts />
+        {/* <InstagramPosts /> */}
         {reviews.length > 1 && <GoogleReviews reviews={reviews} />}
       </main>
     </>

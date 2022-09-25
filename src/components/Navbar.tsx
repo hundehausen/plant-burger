@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
@@ -15,10 +15,10 @@ const Navbar = () => {
           <a>
             <Image
               src="/plant-burger-logo.png"
-              className="mr-3 h-6 sm:h-9 cursor-pointer"
+              className="cursor-pointer max-h-16"
+              width={64}
+              height={64}
               alt="Plant Burger Logo"
-              width={60}
-              height={60}
             />
           </a>
         </Link>
