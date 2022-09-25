@@ -10,7 +10,8 @@
     "eslint": "eslint \"**/*.+(js|jsx|ts|tsx)\"",
     "eslint:fix": "eslint --fix \"**/*.+(js|jsx|ts|tsx)\"",
     "prettier": "prettier --check \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
-    "prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\""
+    "prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.8",
@@ -51,6 +52,7 @@
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
+    "husky": "^8.0.1",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
