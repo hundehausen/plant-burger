@@ -67,7 +67,9 @@ export const GoogleReviews = ({ reviews }: { reviews: Review[] }) => {
   return (
     <>
       <div className="flex items-center justify-center text-xl md:text-2xl">
-        <span>Unsere Google Bewertungen</span>
+        <p className="text-center text-2xl font-bold md:text-2xl">
+          Unsere Google Bewertungen
+        </p>
         <SiGooglestreetview className="ml-4" />
       </div>
       <div className="mx-auto my-4 flex flex-wrap justify-center gap-8">

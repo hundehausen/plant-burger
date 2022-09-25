@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleClick = () => setExpanded((oldValue) => !oldValue);
 
   return (
-    <nav className="rounded border-gray-200 bg-white px-2 py-2.5">
+    <nav className="mb-8 rounded border-gray-200 bg-white px-2 py-2.5">
       <div className="max-w-50 container mx-auto flex flex-wrap items-center justify-between md:px-24">
         <Link href="/">
           <a>

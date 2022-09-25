@@ -22,7 +22,7 @@ const Event = ({ event }: { event: IEvent }) => {
   return (
     <div className="max-w-sm rounded-md border-2 border-gray-800">
       <div className="p-4">
-        <p className="text-2xl font-bold tracking-tight text-gray-800">
+        <p className="text-xl font-bold tracking-tight text-gray-800">
           {event.name}
         </p>
         {event.startDate && event.endDate && (
@@ -43,15 +43,23 @@ const Event = ({ event }: { event: IEvent }) => {
   );
 };
 
-const Events = ({ events }: { events: IEvent[] }) => {
+interface EventsProps {
+  events: IEvent[];
+  className: string;
+}
+
+const Events = ({ events, className, ...other }: EventsProps) => {
   const [upcomingEvents, pastEvents] = partition(
     (event) => isFuture(parseISO(event.endDate)),
     events
   );
 
   return (
-    <div className="mx-auto my-4 flex flex-col justify-center">
-      <p className="mb-4 text-center text-xl md:text-2xl">
+    <div
+      className={`${className} mx-auto my-4 flex flex-col justify-center`}
+      {...other}
+    >
+      <p className="mb-4 text-center text-2xl font-bold md:text-2xl">
         Events mit Plant-Burger 📅
       </p>
       <div className="flex flex-wrap justify-center gap-4">
