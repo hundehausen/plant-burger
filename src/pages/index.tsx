@@ -29,7 +29,7 @@ const Home = ({ events, reviews }: { events: IEvent[]; reviews: Review[] }) => {
       <CustomHead title="Plant-Burger" />
       <main className="flex flex-col justify-center">
         <AboutUs className="mb-8" />
-        <Events className="mb-8" events={events} />
+        <Events className="mb-16" events={events} />
         {reviews.length > 1 && <GoogleReviews reviews={reviews} />}
       </main>
     </>

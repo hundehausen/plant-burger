@@ -7,7 +7,6 @@ const CustomHead = ({
   title: string;
   index?: boolean;
 }) => {
-  debugger;
   return (
     <Head>
       <title>{title}</title>

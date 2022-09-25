@@ -62,20 +62,29 @@ const GoogleReview = ({ review }: { review: Review }) => {
   );
 };
 
-export const GoogleReviews = ({ reviews }: { reviews: Review[] }) => {
+interface GoogleReviewsProps {
+  className?: string;
+  reviews: Review[];
+}
+
+export const GoogleReviews = ({
+  className,
+  reviews,
+  ...other
+}: GoogleReviewsProps) => {
   return (
-    <>
+    <div className={className} {...other}>
       <div className="flex items-center justify-center text-xl md:text-2xl">
         <p className="text-center text-2xl font-bold md:text-2xl">
           Unsere Google Bewertungen
         </p>
-        <SiGooglestreetview className="ml-4" />
+        <SiGooglestreetview className="ml-2" />
       </div>
       <div className="mx-auto my-4 flex flex-wrap justify-center gap-8">
         {reviews.map((review) => (
           <GoogleReview key={review.author_name} review={review} />
         ))}
       </div>
-    </>
+    </div>
   );
 };

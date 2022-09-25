@@ -40,11 +40,11 @@ interface QueryResponse {
 }
 
 export async function getStaticProps() {
-  const articles: QueryResponse = await request({
+  const response: QueryResponse = await request({
     query: menuQuery,
   });
   return {
-    props: { articles: articles.allArticles },
+    props: { articles: response.allArticles },
   };
 }
 
@@ -83,7 +83,6 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
 
         {otherStuff.length > 0 && (
           <div id="other-articles" className="category">
-            <span className="text-2xl font-bold">Anderes</span>
             <div className="flex flex-row flex-wrap justify-center gap-8 p-8">
               {otherStuff.map((otherArticle) => (
                 <Article article={otherArticle} key={otherArticle.title} />
