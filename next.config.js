@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ['lh3.googleusercontent.com'],
+    domains: [],
+  },
+  i18n: {
+    locales: ['de'],
+    defaultLocale: 'de',
   },
 };
 

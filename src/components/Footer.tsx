@@ -11,6 +11,7 @@ const Footer = () => {
               href="https://www.instagram.com/plantburgertrailer"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram"
             >
               <FaInstagram
                 className="cursor-pointer hover:fill-secondary"
@@ -22,6 +23,7 @@ const Footer = () => {
               href="https://www.facebook.com/plantburgertrailer"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook"
             >
               <FaFacebook
                 className="cursor-pointer hover:fill-secondary"
@@ -34,6 +36,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               title="Schreiben Sie uns gerne eine E-Mail!"
+              aria-label="E-Mail"
             >
               <FaEnvelope
                 className="cursor-pointer hover:fill-secondary"
@@ -46,6 +49,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               title="Rufen Sie uns gerne an!"
+              aria-label="Telefon"
             >
               <FaPhone
                 className="cursor-pointer hover:fill-secondary"
@@ -64,7 +68,10 @@ const Footer = () => {
 
               <li>
                 <Link href="/menu" rel="noopener noreferrer">
-                  <a className="text-gray-800 hover:text-secondary">
+                  <a
+                    className="text-gray-800 hover:text-secondary"
+                    aria-label="Speisekarte"
+                  >
                     Speisekarte
                   </a>
                 </Link>

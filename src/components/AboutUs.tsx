@@ -12,7 +12,12 @@ const AboutUs = ({ className, ...other }: AboutUsProps) => {
       className={`${className} mx-auto max-w-sm rounded-md border-2 border-gray-800 md:max-w-2xl lg:max-w-4xl`}
       {...other}
     >
-      <Image src={foodtruck} alt="Unser Foodtruck" className="rounded-t-md" />
+      <Image
+        src={foodtruck}
+        alt="Unser Foodtruck"
+        className="rounded-t-md"
+        quality={80}
+      />
       <div className="p-4">
         <h5 className="text-2xl font-bold">Plant-Burger 🌱</h5>
         <p className="tracking-tight text-gray-800">
