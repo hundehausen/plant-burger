@@ -32,7 +32,8 @@ const Article = ({ article }: ArticleProps) => {
         src={article.image.responsiveImage.srcSet}
         className="h-auto w-full rounded-t-md"
         blurDataURL={article.image.responsiveImage.base64}
-        alt={`${article.title} bild`}
+        alt={`${article.title} Bild`}
+        sizes="100vw"
         width={464}
         height={464}
       />
