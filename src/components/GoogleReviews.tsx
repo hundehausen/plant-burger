@@ -1,5 +1,5 @@
 import fromUnixTime from 'date-fns/fromUnixTime';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import { FaStar } from 'react-icons/fa';
 import { SiGooglestreetview } from 'react-icons/si';
 
@@ -9,6 +9,7 @@ export interface Review {
   language: string;
   original_language: string;
   profile_photo_url: string;
+  photo: string;
   rating: number;
   relative_time_description: string;
   text: string;
@@ -38,10 +39,11 @@ const GoogleReview = ({ review }: { review: Review }) => {
       <div className="flex items-center mb-4 space-x-4">
         <Image
           className="rounded-full"
-          src={review.profile_photo_url}
+          src={`data:image/jpeg;base64,${review.photo}`}
           width={40}
           height={40}
           alt="Reviewer avatar"
+          unoptimized
         />
         <div className="space-y-1 font-medium">
           <p>

@@ -25,7 +25,17 @@ export const fetchGoogleReviews = async () => {
       // we only want four reviews, kick the worst review out
       sortedReviews.shift();
     }
-    return sortedReviews;
+
+    const reviewsWithPhoto: Review[] = [];
+    for await (const review of sortedReviews) {
+      const response = await axios.get(review.profile_photo_url, {
+        responseType: 'arraybuffer',
+      });
+      const photo = Buffer.from(response.data).toString('base64');
+      reviewsWithPhoto.push({ ...review, photo });
+    }
+
+    return reviewsWithPhoto;
   } catch (error) {
     console.error(error);
     return [];
