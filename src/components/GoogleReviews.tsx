@@ -43,7 +43,6 @@ const GoogleReview = ({ review }: { review: Review }) => {
           width={40}
           height={40}
           alt="Reviewer avatar"
-          unoptimized
         />
         <div className="space-y-1 font-medium">
           <p>

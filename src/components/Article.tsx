@@ -1,10 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-import {
-  Image,
-  StructuredText,
-  StructuredTextGraphQlResponse,
-} from 'react-datocms';
-
+import Image from 'next/future/image';
+import { StructuredText, StructuredTextGraphQlResponse } from 'react-datocms';
 export interface IArticle {
   title: string;
   category: string;
@@ -33,8 +29,12 @@ const Article = ({ article }: ArticleProps) => {
   return (
     <div className="min-w-[320px] max-w-xs rounded-md border-2 border-gray-800">
       <Image
-        data={article.image.responsiveImage}
-        className="rounded-tl-md rounded-tr-md"
+        src={article.image.responsiveImage.srcSet}
+        className="h-auto w-full rounded-t-md"
+        blurDataURL={article.image.responsiveImage.base64}
+        alt={`${article.title} bild`}
+        width={464}
+        height={464}
       />
       <div className="p-4">
         <h5 className="text-3xl font-bold tracking-tight text-gray-800">

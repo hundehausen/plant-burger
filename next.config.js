@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: [],
+    domains: ['www.datocms-assets.com'],
   },
   i18n: {
     locales: ['de'],

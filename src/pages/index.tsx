@@ -30,7 +30,6 @@ const Home = ({ events, reviews }: { events: IEvent[]; reviews: Review[] }) => {
       <main className="flex flex-col justify-center">
         <AboutUs className="mb-8" />
         <Events className="mb-8" events={events} />
-        {/* <InstagramPosts /> */}
         {reviews.length > 1 && <GoogleReviews reviews={reviews} />}
       </main>
     </>

@@ -15,8 +15,8 @@ const AboutUs = ({ className, ...other }: AboutUsProps) => {
       <Image
         src={foodtruck}
         alt="Unser Foodtruck"
-        className="rounded-t-md"
-        quality={80}
+        className="h-auto w-full rounded-t-md"
+        sizes="100vw"
       />
       <div className="p-4">
         <h5 className="text-2xl font-bold">Plant-Burger 🌱</h5>
