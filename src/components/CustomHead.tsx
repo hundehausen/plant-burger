@@ -1,6 +1,12 @@
 import Head from 'next/head';
 
-const CustomHead = ({ title, index }: { title: string; index?: boolean }) => {
+const CustomHead = ({
+  title,
+  index = true,
+}: {
+  title: string;
+  index: boolean;
+}) => {
   return (
     <Head>
       <title>{title}</title>
