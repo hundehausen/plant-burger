@@ -5,8 +5,9 @@ const CustomHead = ({
   index = true,
 }: {
   title: string;
-  index: boolean;
+  index?: boolean;
 }) => {
+  debugger;
   return (
     <Head>
       <title>{title}</title>
