@@ -10,8 +10,8 @@ import {
 const Footer = () => {
   return (
     <footer className="text-center text-gray-700">
-      <div className="px-4 py-12 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto space-y-6">
+      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl space-y-6">
           <div id="social" className="flex justify-center gap-6">
             <a
               href="https://www.instagram.com/plantburgertrailer"
@@ -71,8 +71,8 @@ const Footer = () => {
             </a>
           </div>
 
-          <nav className="p-6 border-4 border-gray-900 rounded-3xl">
-            <ul className="flex flex-wrap justify-center text-sm font-bold gap-6">
+          <nav className="rounded-3xl border-4 border-gray-900 p-6">
+            <ul className="flex flex-wrap justify-center gap-6 text-sm font-bold">
               <li>
                 <Link href="/" rel="noopener noreferrer">
                   <a className="text-gray-800 hover:text-secondary">Home</a>
@@ -111,8 +111,8 @@ const Footer = () => {
             </ul>
           </nav>
 
-          <p className="max-w-lg mx-auto text-xs text-gray-500">
-            <span className="block mt-4">
+          <p className="mx-auto max-w-lg text-xs text-gray-500">
+            <span className="mt-4 block">
               &copy; {new Date().getFullYear()} Julian Daniel Kiesele & Marwin
               Löhmann Plant-Burger GbR
             </span>

@@ -25,7 +25,7 @@ const Rating = ({ rating }: { rating: number }) => {
     <FaStar key={index} className="text-grey-300" />
   ));
   return (
-    <div className="flex items-center mb-4" title={`${rating} von 5 Sternen`}>
+    <div className="mb-4 flex items-center" title={`${rating} von 5 Sternen`}>
       {yellowStars.map((item) => item)}
 
       {grayStars}
@@ -35,8 +35,8 @@ const Rating = ({ rating }: { rating: number }) => {
 
 const GoogleReview = ({ review }: { review: Review }) => {
   return (
-    <article className="border-2 border-gray-800 rounded-md p-4 max-w-sm w-80">
-      <div className="flex items-center mb-4 space-x-4">
+    <article className="w-80 max-w-sm rounded-md border-2 border-gray-800 p-4">
+      <div className="mb-4 flex items-center space-x-4">
         <Image
           className="rounded-full"
           src={`data:image/jpeg;base64,${review.photo}`}
@@ -66,11 +66,11 @@ const GoogleReview = ({ review }: { review: Review }) => {
 export const GoogleReviews = ({ reviews }: { reviews: Review[] }) => {
   return (
     <>
-      <div className="text-xl md:text-2xl flex justify-center items-center">
+      <div className="flex items-center justify-center text-xl md:text-2xl">
         <span>Unsere Google Bewertungen</span>
         <SiGooglestreetview className="ml-4" />
       </div>
-      <div className="flex flex-wrap gap-8 justify-center mx-auto my-4">
+      <div className="mx-auto my-4 flex flex-wrap justify-center gap-8">
         {reviews.map((review) => (
           <GoogleReview key={review.author_name} review={review} />
         ))}

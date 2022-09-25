@@ -32,7 +32,7 @@ const Privacy = ({ text }: { text: StructuredTextGraphQlResponse }) => {
     <>
       <CustomHead title="Plant-Burger Datenschutzerklärung" index={false} />
       <div className="container mx-auto">
-        <p className="text-2xl font-bold my-8">Datenschutzerklärung</p>
+        <p className="my-8 text-2xl font-bold">Datenschutzerklärung</p>
         {text && <StructuredText data={text} />}
       </div>
     </>

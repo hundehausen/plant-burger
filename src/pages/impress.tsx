@@ -6,7 +6,7 @@ const Impress: NextPage = () => (
   <>
     <CustomHead title="Plant-Burger Impressum" />
     <main className="text-center">
-      <p className="text-2xl pb-4">Impressum</p>
+      <p className="pb-4 text-2xl">Impressum</p>
       <p>Julian Daniel Kiesele & Marwin Löhmann Plant-Burger GbR</p>
       <p>
         vertretungsberechtigte Gesellschafter: Julian Daniel Kiesele & Marwin

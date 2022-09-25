@@ -20,7 +20,7 @@ export interface IEvent {
 
 const Event = ({ event }: { event: IEvent }) => {
   return (
-    <div className="max-w-sm rounded-md border-gray-800 border-2">
+    <div className="max-w-sm rounded-md border-2 border-gray-800">
       <div className="p-4">
         <p className="text-2xl font-bold tracking-tight text-gray-800">
           {event.name}
@@ -50,11 +50,11 @@ const Events = ({ events }: { events: IEvent[] }) => {
   );
 
   return (
-    <div className="flex flex-col justify-center mx-auto my-4">
-      <p className="text-xl md:text-2xl text-center mb-4">
+    <div className="mx-auto my-4 flex flex-col justify-center">
+      <p className="mb-4 text-center text-xl md:text-2xl">
         Events mit Plant-Burger 📅
       </p>
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="flex flex-wrap justify-center gap-4">
         {upcomingEvents.map((event) => (
           <Event key={event.name} event={event} />
         ))}

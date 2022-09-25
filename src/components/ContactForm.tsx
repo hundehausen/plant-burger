@@ -45,21 +45,21 @@ const ContactForm = () => {
   );
 
   return (
-    <form onSubmit={onSubmit} className="max-w-lg mx-auto">
+    <form onSubmit={onSubmit} className="mx-auto max-w-lg">
       <p className="text-2xl font-bold">Kontaktieren Sie Plant-Burger 💬</p>
       <p className="text-sm font-thin">
         Wir nutzen den Dienstleister SendGrid für das Kontaktformular.
       </p>
       <label
         htmlFor="name"
-        className="block mb-2 font-medium text-gray-900 mt-4"
+        className="mb-2 mt-4 block font-medium text-gray-900"
       >
         Name
       </label>
       <input
         id="name"
         {...register('name')}
-        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md mb-1"
+        className="mb-1 block w-full max-w-lg rounded-md border-2 border-gray-900 p-2.5 text-sm"
       />
       {errors.name?.message && (
         <p className="text-sm text-gray-700">
@@ -68,14 +68,14 @@ const ContactForm = () => {
       )}
       <label
         htmlFor="subject"
-        className="block mb-2 font-medium text-gray-900 mt-4"
+        className="mb-2 mt-4 block font-medium text-gray-900"
       >
         Betreff
       </label>
       <input
         id="subject"
         {...register('subject')}
-        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md mb-1"
+        className="mb-1 block w-full max-w-lg rounded-md border-2 border-gray-900 p-2.5 text-sm"
       />
       {errors.subject?.message && (
         <p className="text-sm text-gray-700">
@@ -84,14 +84,14 @@ const ContactForm = () => {
       )}
       <label
         htmlFor="email"
-        className="block mb-2 font-medium text-gray-900 mt-4"
+        className="mb-2 mt-4 block font-medium text-gray-900"
       >
         E-Mail-Adresse
       </label>
       <input
         id="email"
         {...register('email')}
-        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md mb-1"
+        className="mb-1 block w-full max-w-lg rounded-md border-2 border-gray-900 p-2.5 text-sm"
       />
       {errors.email?.message && (
         <p className="text-sm text-gray-700">
@@ -100,7 +100,7 @@ const ContactForm = () => {
       )}
       <label
         htmlFor="message"
-        className="block mb-2 font-medium text-gray-900 mt-4"
+        className="mb-2 mt-4 block font-medium text-gray-900"
       >
         Ihre Nachricht
       </label>
@@ -108,7 +108,7 @@ const ContactForm = () => {
         id="message"
         {...register('message')}
         rows={4}
-        className="block p-2.5 w-full text-sm max-w-lg border-2 border-gray-900 rounded-md min-h-[100] mb-1"
+        className="mb-1 block min-h-[100] w-full max-w-lg rounded-md border-2 border-gray-900 p-2.5 text-sm"
       ></textarea>
       {errors.message?.message && (
         <p className="text-sm text-gray-700">
@@ -118,7 +118,7 @@ const ContactForm = () => {
       <input
         type="submit"
         value="Nachricht versenden"
-        className="text-gray-900 hover:text-white border-2 border-gray-900 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 my-4 cursor-pointer"
+        className="my-4 mr-2 cursor-pointer rounded-lg border-2 border-gray-900 px-5 py-2.5 text-center text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300"
         disabled={formState.isSubmitting}
       />
       {formState.isSubmitSuccessful ? (

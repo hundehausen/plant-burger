@@ -6,7 +6,7 @@ interface CustomButtonProps {
 const CustomButton = ({ onClick, children }: CustomButtonProps) => {
   return (
     <button
-      className="text-gray-900 hover:text-white border-2 border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 my-2 cursor-pointer"
+      className="my-2 mr-2 cursor-pointer rounded-lg border-2 border-gray-800 px-5 py-2.5 text-center text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300"
       onClick={onClick}
     >
       {children}
