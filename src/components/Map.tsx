@@ -6,17 +6,17 @@ import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 
 import { IEvent } from './Events';
 
+const iconFoodTruck = new Icon({
+  iconUrl: '/foodtruck-icon.png',
+  iconRetinaUrl: '/foodtruck-icon.png',
+  iconSize: new Point(64, 64),
+});
+
 const Map = ({ event }: { event: IEvent }) => {
   const position: LatLngExpression = [
     Number(event.location.latitude),
     Number(event.location.longitude),
   ];
-
-  const iconFoodTruck = new Icon({
-    iconUrl: '/foodtruck-icon.png',
-    iconRetinaUrl: '/foodtruck-icon.png',
-    iconSize: new Point(64, 64),
-  });
 
   return (
     <MapContainer

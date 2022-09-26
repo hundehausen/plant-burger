@@ -44,6 +44,7 @@ const ContactForm = ({ className, ...other }: ContactFormProps) => {
   } = useForm({
     resolver: zodResolver(schema),
   });
+
   const onSubmit = handleSubmit(
     async (data) => await axios.post('/api/sendgrid', data)
   );

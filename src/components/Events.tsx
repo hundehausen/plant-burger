@@ -1,6 +1,7 @@
 import { isFuture, parseISO } from 'date-fns';
 import Link from 'next/link';
 import { partition } from 'ramda';
+import { useMemo } from 'react';
 
 import { formatDate } from '../lib/dateHelpers';
 import CustomButton from './CustomButton';
@@ -51,9 +52,9 @@ interface EventsProps {
 
 const Events = ({ events, className, ...other }: EventsProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [upcomingEvents, pastEvents] = partition(
-    (event) => isFuture(parseISO(event.endDate)),
-    events
+  const [upcomingEvents, pastEvents] = useMemo(
+    () => partition((event) => isFuture(parseISO(event.endDate)), events),
+    [events]
   );
 
   return (
