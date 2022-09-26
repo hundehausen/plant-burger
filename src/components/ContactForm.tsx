@@ -31,7 +31,11 @@ const schema = z.object({
   }),
 });
 
-const ContactForm = () => {
+interface ContactFormProps {
+  className: string;
+}
+
+const ContactForm = ({ className, ...other }: ContactFormProps) => {
   const {
     register,
     handleSubmit,
@@ -45,7 +49,7 @@ const ContactForm = () => {
   );
 
   return (
-    <form onSubmit={onSubmit} className="mx-auto max-w-lg">
+    <form onSubmit={onSubmit} className={`${className} mx-auto`} {...other}>
       <p className="text-2xl font-bold">Kontaktieren Sie Plant-Burger 💬</p>
       <p className="text-sm font-thin">
         Wir nutzen den Dienstleister SendGrid für das Kontaktformular.
@@ -59,7 +63,7 @@ const ContactForm = () => {
       <input
         id="name"
         {...register('name')}
-        className="mb-1 block w-full max-w-lg rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 block w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
       />
       {errors.name?.message && (
         <p className="text-sm text-gray-700">
@@ -75,7 +79,7 @@ const ContactForm = () => {
       <input
         id="subject"
         {...register('subject')}
-        className="mb-1 block w-full max-w-lg rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 block w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
       />
       {errors.subject?.message && (
         <p className="text-sm text-gray-700">
@@ -91,7 +95,7 @@ const ContactForm = () => {
       <input
         id="email"
         {...register('email')}
-        className="mb-1 block w-full max-w-lg rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 block w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
       />
       {errors.email?.message && (
         <p className="text-sm text-gray-700">
@@ -108,7 +112,7 @@ const ContactForm = () => {
         id="message"
         {...register('message')}
         rows={4}
-        className="mb-1 block min-h-[100] w-full max-w-lg rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 block min-h-[100] w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
       ></textarea>
       {errors.message?.message && (
         <p className="text-sm text-gray-700">

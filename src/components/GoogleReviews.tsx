@@ -35,7 +35,7 @@ const Rating = ({ rating }: { rating: number }) => {
 
 const GoogleReview = ({ review }: { review: Review }) => {
   return (
-    <article className="w-80 max-w-sm rounded-md border-2 border-gray-800 p-4">
+    <article className="max-w-sm rounded-md border-2 border-gray-800 p-4">
       <div className="mb-4 flex items-center space-x-4">
         <Image
           className="rounded-full"
@@ -74,12 +74,11 @@ export const GoogleReviews = ({
 }: GoogleReviewsProps) => {
   return (
     <div className={className} {...other}>
-      <div className="flex items-center justify-center text-xl md:text-2xl">
-        <p className="text-center text-2xl font-bold md:text-2xl">
-          Unsere Google Bewertungen
-        </p>
-        <SiGooglestreetview className="ml-2" />
-      </div>
+      <p className="text-center text-2xl font-bold md:text-2xl">
+        Unsere Google Bewertungen
+        <SiGooglestreetview className="ml-2 inline-block align-baseline" />
+      </p>
+
       <div className="mx-auto my-4 flex flex-wrap justify-center gap-8">
         {reviews.map((review) => (
           <GoogleReview key={review.author_name} review={review} />
