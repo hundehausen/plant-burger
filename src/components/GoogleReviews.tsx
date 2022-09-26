@@ -1,5 +1,6 @@
 import fromUnixTime from 'date-fns/fromUnixTime';
 import Image from 'next/future/image';
+import { useMemo } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { SiGooglestreetview } from 'react-icons/si';
 
@@ -20,49 +21,48 @@ export interface Review {
 }
 
 const Rating = ({ rating }: { rating: number }) => {
-  const yellowStars = [...Array(rating)].map((yellowStar, index) => (
-    <FaStar key={index} className="text-yellow-400" />
-  ));
-  const grayStars = [...Array(5 - rating)].map((greyStar, index) => (
-    <FaStar key={index} className="text-grey-300" />
-  ));
+  rating = rating > 5 ? 5 : rating < 0 ? 0 : rating;
+
+  const stars = useMemo(() => [...Array(5).keys()], []);
+
   return (
     <div className="mb-4 flex items-center" title={`${rating} von 5 Sternen`}>
-      {yellowStars.map((item) => item)}
-
-      {grayStars}
+      {stars.map((star, index) => (
+        <FaStar
+          key={star}
+          className={index < rating ? 'text-yellow-400' : 'text-gray-300'}
+        />
+      ))}
     </div>
   );
 };
 
-const GoogleReview = ({ review }: { review: Review }) => {
-  return (
-    <article className="max-w-sm rounded-md border-2 border-gray-800 p-4">
-      <div className="mb-4 flex items-center space-x-4">
-        <Image
-          className="rounded-full"
-          src={`data:image/jpeg;base64,${review.photo}`}
-          width={40}
-          height={40}
-          alt="Reviewer avatar"
-        />
-        <div className="space-y-1 font-medium">
-          <p>
-            {review.author_name}
-            <time
-              dateTime={fromUnixTime(review.time).toDateString()}
-              className="block text-sm text-gray-500"
-            >
-              {review.relative_time_description}
-            </time>
-          </p>
-        </div>
+const GoogleReview = ({ review }: { review: Review }) => (
+  <article className="max-w-sm rounded-md border-2 border-gray-800 p-4">
+    <div className="mb-4 flex items-center space-x-4">
+      <Image
+        className="rounded-full"
+        src={`data:image/jpeg;base64,${review.photo}`}
+        width={40}
+        height={40}
+        alt="Reviewer avatar"
+      />
+      <div className="space-y-1 font-medium">
+        <p>
+          {review.author_name}
+          <time
+            dateTime={fromUnixTime(review.time).toDateString()}
+            className="block text-sm text-gray-500"
+          >
+            {review.relative_time_description}
+          </time>
+        </p>
       </div>
-      <Rating rating={review.rating} />
-      <p className="font-light">{review.text || 'Kein Text hinterlassen'}</p>
-    </article>
-  );
-};
+    </div>
+    <Rating rating={review.rating} />
+    <p className="font-light">{review.text || 'Kein Text hinterlassen'}</p>
+  </article>
+);
 
 interface GoogleReviewsProps {
   className?: string;

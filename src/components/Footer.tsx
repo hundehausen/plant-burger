@@ -79,7 +79,7 @@ const Footer = () => {
 
               <li>
                 <Link href="/contact" rel="noopener noreferrer">
-                  <a className="text-gray-800 hover:text-secondary">Catering</a>
+                  <a className="text-gray-800 hover:text-secondary">Kontakt</a>
                 </Link>
               </li>
 

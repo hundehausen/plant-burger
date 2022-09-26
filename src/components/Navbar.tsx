@@ -63,7 +63,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link href="/contact" aria-current="page">
+              <Link href="/catering" aria-current="page">
                 <a
                   className="text-gray-700 transition hover:text-secondary"
                   onClick={handleClick}
