@@ -32,7 +32,7 @@ const schema = z.object({
 });
 
 interface ContactFormProps {
-  className: string;
+  className?: string;
 }
 
 const ContactForm = ({ className, ...other }: ContactFormProps) => {
@@ -54,65 +54,53 @@ const ContactForm = ({ className, ...other }: ContactFormProps) => {
       <p className="text-sm font-thin">
         Wir nutzen den Dienstleister SendGrid für das Kontaktformular.
       </p>
-      <label
-        htmlFor="name"
-        className="mb-2 mt-4 block font-medium text-gray-900"
-      >
+      <label htmlFor="name" className="mb-2 mt-4 font-medium text-gray-900">
         Name
       </label>
       <input
         id="name"
         {...register('name')}
-        className="mb-1 block w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
       />
       {errors.name?.message && (
         <p className="text-sm text-gray-700">
           {errors.name?.message.toString()}
         </p>
       )}
-      <label
-        htmlFor="subject"
-        className="mb-2 mt-4 block font-medium text-gray-900"
-      >
+      <label htmlFor="subject" className="mb-2 mt-4 font-medium text-gray-900">
         Betreff
       </label>
       <input
         id="subject"
         {...register('subject')}
-        className="mb-1 block w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
       />
       {errors.subject?.message && (
         <p className="text-sm text-gray-700">
           {errors.subject.message?.toString()}
         </p>
       )}
-      <label
-        htmlFor="email"
-        className="mb-2 mt-4 block font-medium text-gray-900"
-      >
+      <label htmlFor="email" className="mb-2 mt-4 font-medium text-gray-900">
         E-Mail-Adresse
       </label>
       <input
         id="email"
         {...register('email')}
-        className="mb-1 block w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
       />
       {errors.email?.message && (
         <p className="text-sm text-gray-700">
           {errors.email.message.toString()}
         </p>
       )}
-      <label
-        htmlFor="message"
-        className="mb-2 mt-4 block font-medium text-gray-900"
-      >
+      <label htmlFor="message" className="mb-2 mt-4 font-medium text-gray-900">
         Ihre Nachricht
       </label>
       <textarea
         id="message"
         {...register('message')}
         rows={4}
-        className="mb-1 block min-h-[100] w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 min-h-[100] w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
       ></textarea>
       {errors.message?.message && (
         <p className="text-sm text-gray-700">

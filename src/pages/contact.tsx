@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <>
       <CustomHead title="Plant-Burger Kontakt" />
-      <ContactForm />
+      <ContactForm className="max-w-md" />
     </>
   );
 };

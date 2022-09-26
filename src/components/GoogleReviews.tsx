@@ -73,7 +73,7 @@ export const GoogleReviews = ({
   ...other
 }: GoogleReviewsProps) => {
   return (
-    <div className={className} {...other}>
+    <div className={`${className}`} {...other}>
       <p className="text-center text-2xl font-bold md:text-2xl">
         Unsere Google Bewertungen
         <SiGooglestreetview className="ml-2 inline-block align-baseline" />

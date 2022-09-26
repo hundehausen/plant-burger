@@ -4,6 +4,7 @@ import { partition } from 'ramda';
 
 import { formatDate } from '../lib/dateHelpers';
 import CustomButton from './CustomButton';
+
 export interface IEvent {
   id: number;
   name: string;
@@ -49,6 +50,7 @@ interface EventsProps {
 }
 
 const Events = ({ events, className, ...other }: EventsProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [upcomingEvents, pastEvents] = partition(
     (event) => isFuture(parseISO(event.endDate)),
     events
@@ -62,7 +64,7 @@ const Events = ({ events, className, ...other }: EventsProps) => {
       <p className="mb-4 text-center text-2xl font-bold md:text-2xl">
         Events mit Plant-Burger 📅
       </p>
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap justify-center gap-8">
         {upcomingEvents.map((event) => (
           <Event key={event.name} event={event} />
         ))}
