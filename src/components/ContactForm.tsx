@@ -64,7 +64,7 @@ const ContactForm = ({ className, ...other }: ContactFormProps) => {
       <input
         id="name"
         {...register('name')}
-        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm dark:border-amber-800"
       />
       {errors.name?.message && (
         <p className="text-sm text-gray-700 dark:text-gray-400">
@@ -80,7 +80,7 @@ const ContactForm = ({ className, ...other }: ContactFormProps) => {
       <input
         id="subject"
         {...register('subject')}
-        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm dark:border-amber-800 dark:focus:border-amber-200"
       />
       {errors.subject?.message && (
         <p className="text-sm text-gray-700 dark:text-gray-400">
@@ -96,7 +96,7 @@ const ContactForm = ({ className, ...other }: ContactFormProps) => {
       <input
         id="email"
         {...register('email')}
-        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm dark:border-amber-800 dark:focus:border-amber-200"
       />
       {errors.email?.message && (
         <p className="text-sm text-gray-700 dark:text-gray-400">
@@ -113,7 +113,7 @@ const ContactForm = ({ className, ...other }: ContactFormProps) => {
         id="message"
         {...register('message')}
         rows={4}
-        className="mb-1 min-h-[100] w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 min-h-[100] w-full rounded-md border-2 border-gray-900 p-2.5 text-sm dark:border-amber-800 dark:focus:border-amber-200"
       ></textarea>
       {errors.message?.message && (
         <p className="text-sm text-gray-700 dark:text-gray-400">
