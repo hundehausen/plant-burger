@@ -9,7 +9,7 @@ interface AboutUsProps {
 const AboutUs = ({ className, ...other }: AboutUsProps) => {
   return (
     <div
-      className={`${className} mx-auto max-w-sm rounded-md border-2 border-gray-800 md:max-w-2xl lg:max-w-4xl`}
+      className={`${className} mx-auto max-w-sm rounded-md border-2 border-amber-800 dark:bg-purple-700 dark:text-gray-100  md:max-w-2xl lg:max-w-4xl`}
       {...other}
     >
       <Image
@@ -20,13 +20,13 @@ const AboutUs = ({ className, ...other }: AboutUsProps) => {
       />
       <div className="p-4">
         <h5 className="text-2xl font-bold">Plant-Burger 🌱</h5>
-        <p className="tracking-tight text-gray-800">
+        <p className="tracking-tigh">
           Mit unserer 100% veganen Speisekarte möchten wir der Umwelt und der
           Gesundheit unserer Kund:innen etwas Gutes tun. Noch nie war auf
           Fleisch zu verzichten so einfach und mit unserem gelernten Koch wird
           jeder Burger zum Geschmackserlebnis.
         </p>
-        <p className="tracking-tight text-gray-800">
+        <p className="tracking-tight">
           Die vegane Variante rückt in den Vordergrund, raus aus dem
           Schattendasein! Regional, nachhaltig, lecker - so sind unsere Burger
           und unser Konzept vom Foodtrailer. Die mobile Variante erlaubt es uns

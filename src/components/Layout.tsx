@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 
 const Layout = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className="px-4">
+    <div className="bg-white px-4 text-gray-800 dark:bg-purple-700 dark:text-gray-200">
       <Navbar />
       {children}
       <Footer />

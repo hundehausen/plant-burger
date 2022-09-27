@@ -1,16 +1,25 @@
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
 import Image from 'next/future/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
   const handleClick = () => setExpanded((oldValue) => !oldValue);
+  const ThemeSwitch = useMemo(
+    () =>
+      dynamic(() => import('../components/ThemeSwitch'), {
+        loading: () => <p>ThemeSwitch is loading</p>,
+        ssr: false,
+      }),
+    []
+  );
 
   return (
-    <nav className="mb-8 rounded border-gray-200 bg-white px-2 py-2.5">
-      <div className="max-w-50 container mx-auto flex flex-wrap items-center justify-between md:px-32">
+    <nav className="mb-8 rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-purple-700 dark:text-gray-100">
+      <div className="max-w-50 container mx-auto flex flex-wrap items-center justify-between md:px-32 lg:px-48">
         <Link href="/">
           <a>
             <Image
@@ -22,12 +31,10 @@ const Navbar = () => {
             />
           </a>
         </Link>
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
-
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 md:hidden"
+          className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 dark:bg-purple-700 dark:text-gray-100 md:hidden"
           aria-controls="navbar-default"
           aria-expanded={expanded}
           onClick={handleClick}
@@ -39,11 +46,11 @@ const Navbar = () => {
           className={clsx('w-full md:block md:w-auto', !expanded && 'hidden')}
           id="navbar-default"
         >
-          <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-right text-xl md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-base md:font-medium">
+          <ul className="mt-4 flex flex-col rounded-lg border-2 border-gray-100 bg-gray-50 p-4 text-right text-xl text-gray-700 dark:bg-purple-600 dark:text-gray-200 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-base md:font-medium dark:md:bg-purple-700">
             <li>
               <Link href="/" aria-current="page">
                 <a
-                  className="text-gray-700 transition hover:text-secondary"
+                  className="transition hover:text-secondary dark:hover:text-amber-400"
                   onClick={handleClick}
                 >
                   Home
@@ -54,7 +61,7 @@ const Navbar = () => {
             <li>
               <Link href="/menu" aria-current="page">
                 <a
-                  className="text-gray-700 transition hover:text-secondary"
+                  className="transition hover:text-secondary dark:hover:text-amber-400"
                   onClick={handleClick}
                 >
                   Speisekarte
@@ -65,12 +72,16 @@ const Navbar = () => {
             <li>
               <Link href="/catering" aria-current="page">
                 <a
-                  className="text-gray-700 transition hover:text-secondary"
+                  className="transition hover:text-secondary dark:hover:text-amber-400"
                   onClick={handleClick}
                 >
                   Catering
                 </a>
               </Link>
+            </li>
+
+            <li>
+              <ThemeSwitch className="inline-flex" />
             </li>
           </ul>
         </div>

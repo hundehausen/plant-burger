@@ -30,7 +30,11 @@ const Rating = ({ rating }: { rating: number }) => {
       {stars.map((star, index) => (
         <FaStar
           key={star}
-          className={index < rating ? 'text-yellow-400' : 'text-gray-300'}
+          className={
+            index < rating
+              ? 'text-yellow-400 dark:text-amber-600'
+              : 'text-gray-300'
+          }
         />
       ))}
     </div>
@@ -38,7 +42,7 @@ const Rating = ({ rating }: { rating: number }) => {
 };
 
 const GoogleReview = ({ review }: { review: Review }) => (
-  <article className="max-w-sm rounded-md border-2 border-gray-800 p-4">
+  <article className="max-w-sm rounded-md border-2 border-gray-800 p-4 dark:border-amber-800">
     <div className="mb-4 flex items-center space-x-4">
       <Image
         className="rounded-full"

@@ -22,18 +22,18 @@ export interface IEvent {
 
 const Event = ({ event }: { event: IEvent }) => {
   return (
-    <div className="max-w-sm rounded-md border-2 border-gray-800">
+    <div className="max-w-sm rounded-md border-2 border-gray-800 dark:border-amber-800 dark:bg-purple-700 dark:text-gray-100">
       <div className="p-4">
-        <p className="text-xl font-bold tracking-tight text-gray-800">
-          {event.name}
-        </p>
+        <p className="text-xl font-bold tracking-tight">{event.name}</p>
         {event.startDate && event.endDate && (
           <p>
             {`${formatDate(event.startDate)} bis ${formatDate(event.endDate)}`}
           </p>
         )}
         {event.description && (
-          <p className="text-gray-700">{event.description}</p>
+          <p className="text-gray-700 dark:text-gray-200">
+            {event.description}
+          </p>
         )}
         <Link href={`/event/${event.id}`}>
           <a>
