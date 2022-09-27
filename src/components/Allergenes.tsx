@@ -34,7 +34,7 @@ const Allergenes = () => {
           <strong>P</strong> - Lupinen
         </li>
       </ul>
-      <p className="mt-2 italic text-gray-600 md:text-lg">
+      <p className="mt-2 italic text-gray-600 dark:text-gray-400 md:text-lg">
         Bei uns sind alle Zutaten, sowie die Zubereitung 100 % vegan 🌱
       </p>
     </div>
