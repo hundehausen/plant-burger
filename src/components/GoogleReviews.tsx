@@ -20,13 +20,16 @@ export interface Review {
   translated: boolean;
 }
 
-const Rating = ({ rating }: { rating: number }) => {
-  rating = rating > 5 ? 5 : rating < 0 ? 0 : rating;
+const stars = [...Array(5).keys()];
 
-  const stars = useMemo(() => [...Array(5).keys()], []);
+const Rating = ({ rating }: { rating: number }) => {
+  const normalizedRating = rating > 5 ? 5 : rating < 0 ? 0 : rating;
 
   return (
-    <div className="mb-4 flex items-center" title={`${rating} von 5 Sternen`}>
+    <div
+      className="mb-4 flex items-center"
+      title={`${normalizedRating} von 5 Sternen`}
+    >
       {stars.map((star, index) => (
         <FaStar
           key={star}
