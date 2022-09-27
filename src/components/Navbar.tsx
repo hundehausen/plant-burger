@@ -23,7 +23,7 @@ const Navbar = () => {
         <Link href="/">
           <a>
             <Image
-              src="/plant-burger-logo.png"
+              src="/plant-burger-logo-transparent.png"
               className="max-h-16 w-full cursor-pointer"
               width={64}
               height={73}
