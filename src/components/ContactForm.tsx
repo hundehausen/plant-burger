@@ -55,63 +55,75 @@ const ContactForm = ({ className, ...other }: ContactFormProps) => {
       <p className="text-sm font-thin">
         Wir nutzen den Dienstleister SendGrid für das Kontaktformular.
       </p>
-      <label htmlFor="name" className="mb-2 mt-4 font-medium text-gray-900">
+      <label
+        htmlFor="name"
+        className="mb-2 mt-4 font-medium text-gray-900 dark:text-gray-200"
+      >
         Name
       </label>
       <input
         id="name"
         {...register('name')}
-        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm dark:border-amber-800"
       />
       {errors.name?.message && (
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-gray-700 dark:text-gray-400">
           {errors.name?.message.toString()}
         </p>
       )}
-      <label htmlFor="subject" className="mb-2 mt-4 font-medium text-gray-900">
+      <label
+        htmlFor="subject"
+        className="mb-2 mt-4 font-medium text-gray-900 dark:text-gray-200"
+      >
         Betreff
       </label>
       <input
         id="subject"
         {...register('subject')}
-        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm dark:border-amber-800 dark:focus:border-amber-200"
       />
       {errors.subject?.message && (
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-gray-700 dark:text-gray-400">
           {errors.subject.message?.toString()}
         </p>
       )}
-      <label htmlFor="email" className="mb-2 mt-4 font-medium text-gray-900">
+      <label
+        htmlFor="email"
+        className="mb-2 mt-4 font-medium text-gray-900 dark:text-gray-200"
+      >
         E-Mail-Adresse
       </label>
       <input
         id="email"
         {...register('email')}
-        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 w-full rounded-md border-2 border-gray-900 p-2.5 text-sm dark:border-amber-800 dark:focus:border-amber-200"
       />
       {errors.email?.message && (
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-gray-700 dark:text-gray-400">
           {errors.email.message.toString()}
         </p>
       )}
-      <label htmlFor="message" className="mb-2 mt-4 font-medium text-gray-900">
+      <label
+        htmlFor="message"
+        className="mb-2 mt-4 font-medium text-gray-900 dark:text-gray-200"
+      >
         Ihre Nachricht
       </label>
       <textarea
         id="message"
         {...register('message')}
         rows={4}
-        className="mb-1 min-h-[100] w-full rounded-md border-2 border-gray-900 p-2.5 text-sm"
+        className="mb-1 min-h-[100] w-full rounded-md border-2 border-gray-900 p-2.5 text-sm dark:border-amber-800 dark:focus:border-amber-200"
       ></textarea>
       {errors.message?.message && (
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-gray-700 dark:text-gray-400">
           {errors.message.message.toString()}
         </p>
       )}
       <input
         type="submit"
         value="Nachricht versenden"
-        className="my-4 mr-2 cursor-pointer rounded-lg border-2 border-gray-900 px-5 py-2.5 text-center text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300"
+        className="my-2 mr-2 cursor-pointer rounded-lg border-2 border-gray-800 px-5 py-2.5 text-center text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300 dark:border-amber-800 dark:text-gray-200"
         disabled={formState.isSubmitting}
       />
       {formState.isSubmitSuccessful ? (

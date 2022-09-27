@@ -27,7 +27,7 @@ interface ArticleProps {
 
 const Article = ({ article }: ArticleProps) => {
   return (
-    <div className="min-w-[320px] max-w-xs rounded-md border-2 border-gray-800">
+    <div className="min-w-[320px] max-w-xs rounded-md border-2 border-gray-800 dark:border-amber-800">
       <Image
         src={article.image.responsiveImage.srcSet}
         className="h-auto w-full rounded-t-md"
@@ -38,17 +38,21 @@ const Article = ({ article }: ArticleProps) => {
         height={464}
       />
       <div className="p-4">
-        <h5 className="text-3xl font-bold tracking-tight text-gray-800">
+        <h5 className="text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-200">
           {article.title}
         </h5>
         {article.ingredients && (
-          <p className="text-lg text-gray-700">{article.ingredients}</p>
+          <p className="text-lg text-gray-700 dark:text-gray-300">
+            {article.ingredients}
+          </p>
         )}
         {article.allergyList && (
-          <p className="text-lg text-gray-500">({article.allergyList})</p>
+          <p className="text-lg text-gray-500 dark:text-gray-400">
+            ({article.allergyList})
+          </p>
         )}
         {article.price && (
-          <span className="text-xl font-bold text-gray-800">
+          <span className="text-xl font-bold text-gray-800 dark:text-gray-200">
             {article.price}
           </span>
         )}

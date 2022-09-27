@@ -55,7 +55,7 @@ const EventPage = ({ event }: EventPageProps) => {
     <>
       <CustomHead title={`Plant-Burger @ ${event.name}`} />
       <main className="mx-auto max-w-3xl">
-        <div className="rounded-3xl border-4 border-gray-900 p-6">
+        <div className="rounded-3xl border-4 border-gray-900 p-6 dark:border-amber-800">
           <p className="text-2xl font-bold">{event.name}</p>
           {event.startDate && event.endDate && (
             <p className="">
@@ -65,13 +65,15 @@ const EventPage = ({ event }: EventPageProps) => {
             </p>
           )}
           {event.locationAddress && (
-            <p className="font-light text-gray-700">{`📍 ${event.locationAddress}`}</p>
+            <p className="font-light text-gray-700 dark:text-gray-200">{`📍 ${event.locationAddress}`}</p>
           )}
           {event.description && (
-            <p className="text-gray-700">{event.description}</p>
+            <p className="text-gray-700 dark:text-gray-200">
+              {event.description}
+            </p>
           )}
           {event.updatedAt && (
-            <p className="mt-2 text-sm italic text-gray-500">
+            <p className="mt-2 text-sm italic text-gray-500 dark:text-gray-400">
               Zuletzt aktualisiert am {formatDate(event.updatedAt)}
             </p>
           )}
