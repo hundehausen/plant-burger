@@ -81,11 +81,6 @@ export const GoogleReviews = ({
         <SiGooglestreetview className="ml-2 inline-block align-baseline" />
       </p>
 
-      <div className="mx-auto my-4 flex flex-wrap justify-center gap-8">
-        {reviews.map((review) => (
-          <GoogleReview key={review.author_name} review={review} />
-        ))}
-      </div>
       <a
         href="https://g.page/r/CWhudCyhxe8yEBM/review"
         target="_blank"
@@ -95,6 +90,12 @@ export const GoogleReviews = ({
       >
         <CustomButton>Google Bewertung abgeben</CustomButton>
       </a>
+
+      <div className="mx-auto my-4 flex flex-wrap justify-center gap-8">
+        {reviews.map((review) => (
+          <GoogleReview key={review.author_name} review={review} />
+        ))}
+      </div>
     </div>
   );
 };
