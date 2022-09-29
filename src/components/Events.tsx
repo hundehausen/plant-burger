@@ -22,7 +22,7 @@ export interface IEvent {
 
 const Event = ({ event }: { event: IEvent }) => {
   return (
-    <div className="max-w-sm rounded-md border-2 border-gray-800 dark:border-amber-800 dark:bg-purple-700 dark:text-gray-100">
+    <div className="max-w-sm rounded-md border-2 border-gray-900 dark:border-amber-800 dark:bg-purple-700 dark:text-gray-100">
       <div className="p-4">
         <p className="text-xl font-bold tracking-tight">{event.name}</p>
         {event.startDate && event.endDate && (

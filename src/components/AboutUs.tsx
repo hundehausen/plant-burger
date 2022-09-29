@@ -9,7 +9,7 @@ interface AboutUsProps {
 const AboutUs = ({ className, ...other }: AboutUsProps) => {
   return (
     <div
-      className={`${className} mx-auto max-w-sm rounded-md border-2 border-amber-800 dark:bg-purple-700 dark:text-gray-100  md:max-w-2xl lg:max-w-4xl`}
+      className={`${className} mx-auto max-w-sm rounded-md border-2 border-gray-900 dark:border-amber-800 dark:bg-purple-700 dark:text-gray-100  md:max-w-2xl lg:max-w-4xl`}
       {...other}
     >
       <Image

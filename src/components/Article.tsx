@@ -27,7 +27,7 @@ interface ArticleProps {
 
 const Article = ({ article }: ArticleProps) => {
   return (
-    <div className="min-w-[320px] max-w-xs rounded-md border-2 border-gray-800 dark:border-amber-800">
+    <div className="min-w-[320px] max-w-xs rounded-md border-2 border-gray-900 dark:border-amber-800">
       <Image
         src={article.image.responsiveImage.srcSet}
         className="h-auto w-full rounded-t-md"

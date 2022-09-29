@@ -45,7 +45,7 @@ const Rating = ({ rating }: { rating: number }) => {
 };
 
 const GoogleReview = ({ review }: { review: Review }) => (
-  <article className="max-w-sm rounded-md border-2 border-gray-800 p-4 dark:border-amber-800">
+  <article className="max-w-sm rounded-md border-2 border-gray-900 p-4 dark:border-amber-800">
     <div className="mb-4 flex items-center space-x-4">
       <Image
         className="rounded-full"
