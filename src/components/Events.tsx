@@ -1,4 +1,4 @@
-import { isFuture, parseISO } from 'date-fns';
+import { compareAsc, isFuture, parseISO } from 'date-fns';
 import Link from 'next/link';
 import { partition } from 'ramda';
 import { useMemo } from 'react';
@@ -44,7 +44,6 @@ const Event = ({ event }: { event: IEvent }) => {
     </div>
   );
 };
-
 interface EventsProps {
   events: IEvent[];
   className: string;
@@ -56,6 +55,9 @@ const Events = ({ events, className, ...other }: EventsProps) => {
     () => partition((event) => isFuture(parseISO(event.endDate)), events),
     [events]
   );
+  const sortedEvents = upcomingEvents.sort((a, b) =>
+    a.endDate < b.endDate ? -1 : a.endDate > b.endDate ? 1 : 0
+  );
 
   return (
     <div
@@ -66,7 +68,7 @@ const Events = ({ events, className, ...other }: EventsProps) => {
         Events mit Plant-Burger 📅
       </p>
       <div className="flex flex-wrap justify-center gap-8">
-        {upcomingEvents.map((event) => (
+        {sortedEvents.map((event) => (
           <Event key={event.name} event={event} />
         ))}
       </div>

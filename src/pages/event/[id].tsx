@@ -109,12 +109,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
   if (!id) {
     return { props: { event: undefined } };
   }
-  const event: QueryResponseById = await request({
+  const eventResponse: QueryResponseById = await request({
     query: QUERY_BY_ID,
     variables: { id: id },
   });
   return {
-    props: { event: event.event },
+    props: { event: eventResponse.event },
   };
 };
 

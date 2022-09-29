@@ -7,7 +7,7 @@ import { GoogleReviews, Review } from '../components/GoogleReviews';
 import { request } from '../lib/datocms';
 import { fetchGoogleReviews } from '../lib/googleMapsRatings';
 
-const eventQuery = gql`
+const EVENT_QUERY = gql`
   {
     allEvents {
       id
@@ -41,12 +41,12 @@ interface QueryResponse {
 }
 
 export async function getStaticProps() {
-  const events: QueryResponse = await request({
-    query: eventQuery,
+  const eventResponse: QueryResponse = await request({
+    query: EVENT_QUERY,
   });
   const reviews = await fetchGoogleReviews();
   return {
-    props: { events: events.allEvents, reviews },
+    props: { events: eventResponse.allEvents, reviews },
   };
 }
 
