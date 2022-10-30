@@ -1,4 +1,4 @@
-import { compareAsc, isFuture, parseISO } from 'date-fns';
+import { isFuture, parseISO } from 'date-fns';
 import Link from 'next/link';
 import { partition } from 'ramda';
 import { useMemo } from 'react';
@@ -68,9 +68,11 @@ const Events = ({ events, className, ...other }: EventsProps) => {
         Events mit Plant-Burger 📅
       </p>
       <div className="flex flex-wrap justify-center gap-8">
-        {sortedEvents.map((event) => (
-          <Event key={event.name} event={event} />
-        ))}
+        {sortedEvents.length > 0 ? (
+          sortedEvents.map((event) => <Event key={event.name} event={event} />)
+        ) : (
+          <p>Aktuell sind keine Events geplant.</p>
+        )}
       </div>
     </div>
   );
