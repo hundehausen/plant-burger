@@ -8,9 +8,7 @@ import { request } from '../lib/datocms';
 
 const menuQuery = gql`
   {
-    allArticles(
-      filter: { visible: { eq: "true" }, showInTrailer: { eq: "true" } }
-    ) {
+    allArticles(filter: { showInTrailer: { eq: "true" } }) {
       title
       category
       ingredients
@@ -57,7 +55,7 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
 
   return (
     <>
-      <CustomHead title="Plant-Burger Speisekarte" />
+      <CustomHead title="Plant-Burger Speisekarte" index={false} />
       <p className="text-center text-2xl font-bold">Speisekarte</p>
       <div className="p-8 text-center">
         {burgers.length > 0 && (

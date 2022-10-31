@@ -8,7 +8,7 @@ import { request } from '../lib/datocms';
 
 const menuQuery = gql`
   {
-    allArticles(filter: { visible: { eq: "true" } }) {
+    allArticles(filter: { showOnWebsite: { eq: "true" } }) {
       title
       category
       ingredients
