@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { StructuredText, StructuredTextGraphQlResponse } from 'react-datocms';
 export interface IArticle {
   title: string;

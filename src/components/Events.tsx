@@ -36,9 +36,7 @@ const Event = ({ event }: { event: IEvent }) => {
           </p>
         )}
         <Link href={`/event/${event.id}`}>
-          <a>
-            <CustomButton>Mehr Infos</CustomButton>
-          </a>
+          <CustomButton>Mehr Infos</CustomButton>
         </Link>
       </div>
     </div>

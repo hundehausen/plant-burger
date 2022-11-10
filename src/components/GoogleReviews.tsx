@@ -1,6 +1,5 @@
 import fromUnixTime from 'date-fns/fromUnixTime';
-import Image from 'next/future/image';
-import { useMemo } from 'react';
+import Image from 'next/image';
 import { FaStar } from 'react-icons/fa';
 import { SiGooglestreetview } from 'react-icons/si';
 

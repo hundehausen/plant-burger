@@ -60,45 +60,53 @@ const Footer = () => (
         <nav className="rounded-3xl border-4 border-gray-900 p-6 dark:border-amber-800">
           <ul className="flex flex-wrap justify-center gap-6 text-sm font-bold">
             <li>
-              <Link href="/" rel="noopener noreferrer">
-                <a className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500">
-                  Home
-                </a>
+              <Link
+                href="/"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500"
+              >
+                Home
               </Link>
             </li>
 
             <li>
-              <Link href="/menu" rel="noopener noreferrer">
-                <a
-                  className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500"
-                  aria-label="Speisekarte"
-                >
-                  Speisekarte
-                </a>
+              <Link
+                href="/menu"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500"
+                aria-label="Speisekarte"
+              >
+                Speisekarte
               </Link>
             </li>
 
             <li>
-              <Link href="/contact" rel="noopener noreferrer">
-                <a className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500">
-                  Kontakt
-                </a>
+              <Link
+                href="/contact"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500"
+              >
+                Kontakt
               </Link>
             </li>
 
             <li>
-              <Link href="/impress" rel="noopener noreferrer">
-                <a className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500">
-                  Impressum
-                </a>
+              <Link
+                href="/impress"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500"
+              >
+                Impressum
               </Link>
             </li>
 
             <li>
-              <Link href="/privacy" rel="noopener noreferrer">
-                <a className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500">
-                  Datenschutzerklärung
-                </a>
+              <Link
+                href="/privacy"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-secondary dark:text-gray-200 dark:hover:text-amber-500"
+              >
+                Datenschutzerklärung
               </Link>
             </li>
           </ul>
