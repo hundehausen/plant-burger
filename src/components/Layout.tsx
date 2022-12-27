@@ -5,9 +5,12 @@ import Navbar from './Navbar';
 
 const Layout = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className="bg-white px-4 text-gray-800 dark:bg-purple-700 dark:text-gray-200">
-      <Navbar />
-      {children}
+    <div className="relative min-h-full bg-white px-4 text-gray-800 dark:bg-purple-700 dark:text-gray-200">
+      <div className="pb-[280px]">
+        <Navbar />
+        {children}
+      </div>
+
       <Footer />
     </div>
   );

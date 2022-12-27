@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { FaEnvelope, FaFacebook, FaInstagram, FaPhone } from 'react-icons/fa';
 
 const Footer = () => (
-  <footer className="text-center text-gray-700 dark:text-gray-200">
+  <footer className="absolute bottom-0 left-0 h-[280px] w-full text-center text-gray-700 dark:text-gray-200">
     <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl space-y-6">
         <div id="social" className="flex justify-center gap-6">
