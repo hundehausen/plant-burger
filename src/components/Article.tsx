@@ -8,6 +8,10 @@ export interface IArticle {
   allergyList: string;
   extras: StructuredTextGraphQlResponse;
   price: string;
+  pricelist: {
+    name: string;
+    price: string;
+  }[];
   image: {
     responsiveImage: {
       aspectRatio: number;
@@ -45,6 +49,16 @@ const Article = ({ article }: ArticleProps) => {
           <p className="text-lg text-gray-700 dark:text-gray-300">
             {article.ingredients}
           </p>
+        )}
+        {article.pricelist && (
+          <div className="my-2">
+            {article.pricelist.map(({ name, price }) => (
+              <div key={name} className="flex flex-row justify-between text-lg">
+                <span>{name}</span>
+                <span>{price}</span>
+              </div>
+            ))}
+          </div>
         )}
         {article.allergyList && (
           <p className="text-lg text-gray-500 dark:text-gray-400">
