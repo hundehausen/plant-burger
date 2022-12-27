@@ -44,7 +44,7 @@ const Navbar = () => {
           className={clsx('w-full md:block md:w-auto', !expanded && 'hidden')}
           id="navbar-default"
         >
-          <ul className="mt-4 flex flex-col rounded-lg border-2 border-gray-100 bg-gray-50 p-4 text-right text-xl text-gray-700 dark:bg-purple-600 dark:text-gray-200 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-base md:font-medium dark:md:bg-purple-700">
+          <ul className="flex flex-col rounded-lg border-2 border-gray-100 bg-gray-50 p-4 text-right text-lg text-gray-700 dark:bg-purple-600 dark:text-gray-200 md:mt-4 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-xl md:font-medium dark:md:bg-purple-700">
             <li>
               <Link
                 href="/"
