@@ -2,7 +2,8 @@ import { gql } from 'graphql-request';
 
 import AboutUs from '../components/AboutUs';
 import CustomHead from '../components/CustomHead';
-import Events, { IEvent } from '../components/Events';
+import { IEvent } from '../components/Event';
+import Events from '../components/Events';
 import { GoogleReviews, Review } from '../components/GoogleReviews';
 import { request } from '../lib/datocms';
 import { fetchGoogleReviews } from '../lib/googleMapsRatings';
