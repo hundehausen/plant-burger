@@ -4,7 +4,7 @@ import type { LatLngExpression } from 'leaflet';
 import { Icon, Point } from 'leaflet';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 
-import { IEvent } from './Events';
+import { IEvent } from './Event';
 
 const iconFoodTruck = new Icon({
   iconUrl: '/foodtruck-icon.png',

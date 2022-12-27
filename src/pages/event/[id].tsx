@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 
 import CustomHead from '../../components/CustomHead';
-import { IEvent } from '../../components/Events';
+import { IEvent } from '../../components/Event';
 import { formatDate } from '../../lib/dateHelpers';
 import { request } from '../../lib/datocms';
 
