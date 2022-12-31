@@ -57,7 +57,7 @@ const Menu = ({ articles }: { articles: IArticle[] }) => {
   return (
     <>
       <CustomHead title="Plant-Burger Speisekarte" />
-      <p className="text-center text-2xl font-bold">Speisekarte</p>
+      <h1 className="text-center text-2xl font-bold">Speisekarte</h1>
       <div className="p-8 text-center">
         {burgers.length > 0 && (
           <div id="burgers" className="category">

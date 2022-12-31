@@ -21,7 +21,7 @@ const Event = ({ event }: { event: IEvent }) => {
   return (
     <div className="relative max-w-sm rounded-md border-2 border-gray-900 pb-14 dark:border-amber-800 dark:bg-purple-700 dark:text-gray-100">
       <div className="min-h-full p-4">
-        <p className="text-xl font-bold tracking-tight">{event.name}</p>
+        <h2 className="text-xl font-bold tracking-tight">{event.name}</h2>
         {event.startDate && event.endDate && (
           <p>
             {`${formatDate(event.startDate)} bis ${formatDate(event.endDate)}`}
