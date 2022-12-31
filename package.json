@@ -16,6 +16,7 @@
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
     "@sendgrid/mail": "^7.7.0",
+    "@vercel/analytics": "^0.1.6",
     "axios": "^1.2.1",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
