@@ -14,6 +14,7 @@ const menuQuery = gql`
       ingredients
       allergyList
       price
+      pricelist
       image {
         responsiveImage {
           srcSet
