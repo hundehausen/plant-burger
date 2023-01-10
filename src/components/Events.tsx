@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { partition } from 'ramda';
 import { useMemo } from 'react';
 
+import CustomButton from './CustomButton';
 import Event, { IEvent } from './Event';
 
 interface EventsProps {
@@ -39,7 +40,7 @@ const Events = ({ events, className, ...other }: EventsProps) => {
         href={'/past-events'}
         className="mt-8 transition hover:text-secondary dark:hover:text-amber-400"
       >
-        vergangene Events
+        <CustomButton>vergangene Events</CustomButton>
       </Link>
     </div>
   );
